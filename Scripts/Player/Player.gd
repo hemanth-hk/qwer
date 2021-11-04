@@ -1,10 +1,10 @@
 extends KinematicBody2D
-const ACC = 1024
-const MAX_SPEED = 128
-const FRICTION = 0.25
-const AIR_RESIST = 0.02
-const GRAVITY = 300
-const JUMP_FORCE = 256
+export var ACC = 1024
+export var MAX_SPEED = 128
+export var FRICTION = 0.25
+export var AIR_RESIST = 0.02
+export var GRAVITY = 300
+export var JUMP_FORCE = 256
 
 var motion = Vector2.ZERO
 
