@@ -47,8 +47,10 @@ texture = ExtResource( 2 )
 position = Vector2( 0.856824, 0.748864 )
 scale = Vector2( 0.551264, 0.571097 )
 frames = SubResource( 6 )
+frame = 3
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 40.363, 3.36359 )
+position = Vector2( -3.35449, -1.29578 )
 current = true
+zoom = Vector2( 0.7, 0.7 )
