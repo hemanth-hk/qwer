@@ -92,7 +92,6 @@ func _physics_process(_delta):
 			y_velo = MAX_FALL_SPEED
 
 func _on_WindowsDefender_die():
-	NUMOFJUMPS = 3
 	dead = true
 	get_node("MovementParticles").emitting = false
 	$"AnimationPlayer".play("death")
@@ -101,3 +100,8 @@ func _on_WindowsDefender_die():
 	yield(get_tree().create_timer(1), "timeout")
 	get_tree().change_scene("res://Scenes/Levels/Level1.tscn")
 #	$"Sprite/AnimatedSprite".play("default")
+
+func change(level):
+	if(level==1):
+		NUMOFJUMPS = 3
+		$"Sprite/AnimatedSprite".play("triplejump")

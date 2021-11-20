@@ -172,19 +172,22 @@ collision_mask = 2
 script = ExtResource( 3 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+position = Vector2( -0.0949631, -0.0976162 )
+scale = Vector2( 1.00427, 1.00475 )
 polygon = PoolVector2Array( -8.48643, -13.3821, -15.5305, -6.43726, -15.5305, 5.46825, -8.48643, 12.7108, 6.39546, 12.6116, 13.5388, 5.56746, 13.3403, -7.03254, 6.625, -13.375 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( -0.595276, -0.595276 )
 frames = SubResource( 7 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Sprite"]
 position = Vector2( 0.35569, -0.204797 )
 scale = Vector2( 0.638266, 0.661579 )
 frames = SubResource( 18 )
-frame = 2
+frame = 1
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
