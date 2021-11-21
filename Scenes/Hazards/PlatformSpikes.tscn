@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Media/Platforms_Hazards/Hazards.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Hazards/PlatformSpikes.gd" type="Script" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 19.5266, 2.00412 )
 
 [node name="PlatformSpikes" type="StaticBody2D"]
 collision_layer = 2
+script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 0.353554, -0.176781 )
@@ -14,11 +16,15 @@ texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 48, 16 )
 
-[node name="SpikesCollision" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2( -0.265167, -3.27037 )
-shape = SubResource( 1 )
-
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 visible = false
 polygon = PoolVector2Array( -20.6017, -1.03185, -20.6017, 4.80178, 20.3221, 4.89017, 20.365, -1.01028 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="SpikesCollision" type="CollisionShape2D" parent="Area2D"]
+visible = false
+position = Vector2( -0.265167, -3.27037 )
+shape = SubResource( 2 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
