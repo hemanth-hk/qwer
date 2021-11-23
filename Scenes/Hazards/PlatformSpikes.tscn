@@ -7,7 +7,8 @@
 extents = Vector2( 19.5266, 2.00412 )
 
 [node name="PlatformSpikes" type="StaticBody2D"]
-collision_layer = 2
+collision_layer = 8
+collision_mask = 7
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -21,6 +22,8 @@ visible = false
 polygon = PoolVector2Array( -20.6017, -1.03185, -20.6017, 4.80178, 20.3221, 4.89017, 20.365, -1.01028 )
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 7
 
 [node name="SpikesCollision" type="CollisionShape2D" parent="Area2D"]
 visible = false

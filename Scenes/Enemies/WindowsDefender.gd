@@ -23,7 +23,7 @@ func _on_Area2D4_body_entered(body):
 		emit_signal("die")	
 
 func _on_Area2D_body_entered(body):
-	if body.name == "Player":
+	if body and body.name == "Player":
 		get_node("Area2D2").queue_free()
 		get_node("Area2D3").queue_free()
 		get_node("Area2D4").queue_free()

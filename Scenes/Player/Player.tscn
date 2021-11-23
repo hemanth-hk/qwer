@@ -98,7 +98,7 @@ animations = [ {
 [sub_resource type="Curve" id=19]
 _data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.238727, 0.995454 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.289773 ), 0.0, 0.0, 0, 0 ]
 
-[sub_resource type="CurveTexture" id=20]
+[sub_resource type="CurveTexture" id=28]
 curve = SubResource( 19 )
 
 [sub_resource type="ParticlesMaterial" id=21]
@@ -112,7 +112,7 @@ orbit_velocity = 0.0
 orbit_velocity_random = 0.0
 damping = 10.0
 scale = 6.0
-scale_curve = SubResource( 20 )
+scale_curve = SubResource( 28 )
 color = Color( 0.219608, 0.0627451, 0.352941, 1 )
 
 [sub_resource type="Gradient" id=22]
@@ -168,7 +168,7 @@ tracks/1/keys = {
 }
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
-collision_mask = 2
+collision_mask = 62
 script = ExtResource( 3 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]

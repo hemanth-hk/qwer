@@ -1,14 +1,14 @@
 [gd_scene load_steps=24 format=2]
 
-[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Media/Tilesets/OutsideLayer/OutsideLayerTileset.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/Hazards/PlatformSpikes.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Media/Platforms_Hazards/Hazards.png" type="Texture" id=4]
-[ext_resource path="res://Media/Proto/white.png" type="Texture" id=5]
-[ext_resource path="res://Scenes/Hazards/Spikes.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/Enemies/WindowsDefender.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/Props/Teleporter.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/GUI/Lv1GUI.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Hazards/PlatformSpikes.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Hazards/Spikes.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Props/Teleporter.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/GUI/Lv1GUI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Enemies/WindowsDefender.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Media/Tilesets/OutsideLayer/OutsideLayerTileset.png" type="Texture" id=7]
+[ext_resource path="res://Media/Platforms_Hazards/Hazards.png" type="Texture" id=8]
+[ext_resource path="res://Media/Proto/white.png" type="Texture" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 16, 16, 0, 16, 0, 0.659363, 16, 0.659363 )
@@ -48,7 +48,7 @@ points = PoolVector2Array( 15.2158, 16, 1.75704, 16, 1.75704, 7.90019, 15.2158, 
 
 [sub_resource type="TileSet" id=13]
 0/name = "OutsideLayerTileset.png 0"
-0/texture = ExtResource( 2 )
+0/texture = ExtResource( 7 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 48, 48 )
@@ -120,7 +120,7 @@ points = PoolVector2Array( 15.2158, 16, 1.75704, 16, 1.75704, 7.90019, 15.2158, 
 } ]
 0/z_index = 0
 2/name = "Hazards.png 2"
-2/texture = ExtResource( 4 )
+2/texture = ExtResource( 8 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 24, 8, 0, 0 )
@@ -150,7 +150,7 @@ points = PoolVector2Array( 15.2158, 16, 1.75704, 16, 1.75704, 7.90019, 15.2158, 
 } ]
 2/z_index = 0
 3/name = "Hazards.png 3"
-3/texture = ExtResource( 4 )
+3/texture = ExtResource( 8 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
 3/region = Rect2( 0, 0, 48, 16 )
@@ -180,7 +180,7 @@ points = PoolVector2Array( 15.2158, 16, 1.75704, 16, 1.75704, 7.90019, 15.2158, 
 } ]
 3/z_index = 0
 4/name = "Hazards.png 4"
-4/texture = ExtResource( 4 )
+4/texture = ExtResource( 8 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
 4/region = Rect2( 0, 16, 48, 16 )
@@ -210,7 +210,7 @@ points = PoolVector2Array( 15.2158, 16, 1.75704, 16, 1.75704, 7.90019, 15.2158, 
 } ]
 4/z_index = 0
 5/name = "Hazards.png 5"
-5/texture = ExtResource( 4 )
+5/texture = ExtResource( 8 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
 5/region = Rect2( 48, 0, 16, 16 )
@@ -233,7 +233,7 @@ points = PoolVector2Array( 15.2158, 16, 1.75704, 16, 1.75704, 7.90019, 15.2158, 
 
 [sub_resource type="Curve2D" id=14]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -449.991, -617.218, 0, 0, 0, 0, -450.659, -542.133, 0, 0, 0, 0, -379.079, -541.933, 0, 0, 0, 0, -379.5, -726.5, 0, 0, 0, 0, -255.461, -607.964, 0, 0, 0, 0, -53.9389, -672.391, 0, 0, 0, 0, -53.9817, -760.909, 0, 0, 0, 0, -271.948, -761.539, 0, 0, 0, 0, -379.356, -726.577, 0, 0, 0, 0, -449.991, -617.218 )
+"points": PoolVector2Array( 0, 0, 0, 0, -449.991, -617.218, 0, 0, 0, 0, -450.659, -542.133, 0, 0, 0, 0, -379.079, -541.933, 0, 0, 0, 0, -379.5, -726.5, 0, 0, 0, 0, -255.461, -607.964, 0, 0, 0, 0, -53.9389, -672.391, 0, 0, 0, 0, -53.9817, -760.909, 0, 0, 0, 0, -271.948, -761.539, 0, 0, 0, 0, -379.356, -726.577 )
 }
 
 [node name="Level1" type="Node2D"]
@@ -247,13 +247,13 @@ margin_right = 3119.0
 margin_bottom = 916.0
 rect_scale = Vector2( 0.3, 0.3 )
 rect_clip_content = true
-texture = ExtResource( 5 )
+texture = ExtResource( 9 )
 stretch_mode = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
+[node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( -556.421, -663.735 )
 scale = Vector2( 0.6, 0.6 )
 
@@ -267,65 +267,65 @@ tile_data = PoolIntArray( -3342348, 1610612737, 2, -3342347, 1610612737, 1, -334
 
 [node name="PlatformSpikes" type="Node" parent="."]
 
-[node name="PlatformSpikes" parent="PlatformSpikes" instance=ExtResource( 3 )]
+[node name="PlatformSpikes" parent="PlatformSpikes" instance=ExtResource( 1 )]
 position = Vector2( -1100.36, -1219.48 )
 rotation = 3.14159
 scale = Vector2( 4, 4 )
 
-[node name="PlatformSpikes3" parent="PlatformSpikes" instance=ExtResource( 3 )]
+[node name="PlatformSpikes3" parent="PlatformSpikes" instance=ExtResource( 1 )]
 position = Vector2( -325.697, -1167.07 )
 rotation = 3.14159
 scale = Vector2( 4, 4 )
 
-[node name="PlatformSpikes2" parent="PlatformSpikes" instance=ExtResource( 3 )]
+[node name="PlatformSpikes2" parent="PlatformSpikes" instance=ExtResource( 1 )]
 position = Vector2( -431.957, -1393.2 )
 scale = Vector2( 4, 4 )
 
-[node name="PlatformSpikes4" parent="PlatformSpikes" instance=ExtResource( 3 )]
+[node name="PlatformSpikes4" parent="PlatformSpikes" instance=ExtResource( 1 )]
 position = Vector2( 108.654, -1387.86 )
 scale = Vector2( 4, 4 )
 
 [node name="Spikes" type="Node" parent="."]
 
-[node name="StaticBody2D2" parent="Spikes" instance=ExtResource( 7 )]
+[node name="StaticBody2D2" parent="Spikes" instance=ExtResource( 2 )]
 position = Vector2( -1151.48, -1034.93 )
 scale = Vector2( 3, 3 )
 
-[node name="StaticBody2D3" parent="Spikes" instance=ExtResource( 7 )]
+[node name="StaticBody2D3" parent="Spikes" instance=ExtResource( 2 )]
 position = Vector2( -1059.03, -1033.19 )
 scale = Vector2( 3, 3 )
 
-[node name="StaticBody2D12" parent="Spikes" instance=ExtResource( 7 )]
+[node name="StaticBody2D12" parent="Spikes" instance=ExtResource( 2 )]
 position = Vector2( -893.854, -1558.48 )
 rotation = 3.14159
 scale = Vector2( 3, 3 )
 
-[node name="StaticBody2D13" parent="Spikes" instance=ExtResource( 7 )]
+[node name="StaticBody2D13" parent="Spikes" instance=ExtResource( 2 )]
 position = Vector2( -1021.81, -1560.16 )
 rotation = 3.14159
 scale = Vector2( 3, 3 )
 
-[node name="StaticBody2D4" parent="Spikes" instance=ExtResource( 7 )]
+[node name="StaticBody2D4" parent="Spikes" instance=ExtResource( 2 )]
 position = Vector2( -865.958, -1031.85 )
 scale = Vector2( 3, 3 )
 
-[node name="StaticBody2D11" parent="Spikes" instance=ExtResource( 7 )]
+[node name="StaticBody2D11" parent="Spikes" instance=ExtResource( 2 )]
 position = Vector2( -766.059, -1032.98 )
 scale = Vector2( 3, 3 )
 
-[node name="StaticBody2D15" parent="Spikes" instance=ExtResource( 7 )]
+[node name="StaticBody2D15" parent="Spikes" instance=ExtResource( 2 )]
 position = Vector2( 191.973, -1032.98 )
 scale = Vector2( 3, 3 )
 
-[node name="StaticBody2D14" parent="Spikes" instance=ExtResource( 7 )]
+[node name="StaticBody2D14" parent="Spikes" instance=ExtResource( 2 )]
 position = Vector2( 93.8101, -1033.92 )
 scale = Vector2( 3, 3 )
 
-[node name="StaticBody2D16" parent="Spikes" instance=ExtResource( 7 )]
+[node name="StaticBody2D16" parent="Spikes" instance=ExtResource( 2 )]
 position = Vector2( -0.963623, -1033.92 )
 scale = Vector2( 3, 3 )
 
-[node name="StaticBody2D5" parent="Spikes" instance=ExtResource( 7 )]
+[node name="StaticBody2D5" parent="Spikes" instance=ExtResource( 2 )]
 position = Vector2( -960.909, -1035.22 )
 scale = Vector2( 3, 3 )
 
@@ -337,16 +337,16 @@ position = Vector2( -449.991, -617.218 )
 rotation = -1.5708
 rotate = false
 
-[node name="WindowsDefender" parent="Path2D/PathFollow2D" instance=ExtResource( 8 )]
+[node name="WindowsDefender" parent="Path2D/PathFollow2D" instance=ExtResource( 6 )]
 position = Vector2( -0.653503, 0.0604858 )
 rotation = 1.5708
 _speed = 50
 
-[node name="Teleporter1" parent="." instance=ExtResource( 9 )]
+[node name="Teleporter1" parent="." instance=ExtResource( 3 )]
 position = Vector2( -303.208, -794.377 )
 scale = Vector2( 1.9, 1 )
 
-[node name="lvl1gui" parent="." instance=ExtResource( 10 )]
+[node name="lvl1gui" parent="." instance=ExtResource( 5 )]
 
 [connection signal="die" from="Path2D/PathFollow2D/WindowsDefender" to="Player" method="_on_WindowsDefender_die"]
 [connection signal="kill_windows" from="Path2D/PathFollow2D/WindowsDefender" to="Player" method="_on_WindowsDefender_kill_windows"]

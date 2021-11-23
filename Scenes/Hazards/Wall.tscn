@@ -3,9 +3,11 @@
 [ext_resource path="res://Media/Platforms_Hazards/Wall/Wall.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 7.99185, 15.076 )
+extents = Vector2( 7.54284, 15.076 )
 
 [node name="StaticBody2D" type="StaticBody2D"]
+collision_layer = 8
+collision_mask = 51
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )

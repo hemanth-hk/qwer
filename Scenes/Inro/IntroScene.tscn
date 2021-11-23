@@ -4,7 +4,7 @@
 [ext_resource path="res://Scenes/Enemies/WindowsDefender.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/Intro/IntroScene.gd" type="Script" id=3]
 
-[sub_resource type="Curve2D" id=7]
+[sub_resource type="Curve2D" id=1]
 _data = {
 "points": PoolVector2Array( 0, 0, 0, 0, -81.1152, 339.645, 0, 0, 0, 0, 1184.01, 339.641, 0, 0, 0, 0, -81.1152, 339.645 )
 }
@@ -28,7 +28,7 @@ __meta__ = {
 }
 
 [node name="Path2D" type="Path2D" parent="bg"]
-curve = SubResource( 7 )
+curve = SubResource( 1 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="bg/Path2D"]
 position = Vector2( -81.1152, 339.645 )

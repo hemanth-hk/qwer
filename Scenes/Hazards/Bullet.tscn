@@ -1,0 +1,84 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Scripts/Hazards/Bullet.gd" type="Script" id=1]
+[ext_resource path="res://Media/Platforms_Hazards/Bullet/Bullet.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 3.97001, 7.01949 )
+
+[sub_resource type="Gradient" id=21]
+colors = PoolColorArray( 0.554688, 0.034668, 0.034668, 1, 0.851563, 0.821625, 0.821625, 1 )
+
+[sub_resource type="GradientTexture" id=22]
+gradient = SubResource( 21 )
+
+[sub_resource type="Curve" id=23]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 0.171598, 0.977273 ), -0.608144, -0.608144, 0, 0, Vector2( 1, 0.0318182 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=20]
+curve = SubResource( 23 )
+
+[sub_resource type="Curve" id=24]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0.718182 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=25]
+curve = SubResource( 24 )
+
+[sub_resource type="ParticlesMaterial" id=26]
+trail_divisor = 2
+trail_size_modifier = SubResource( 25 )
+emission_shape = 2
+emission_box_extents = Vector3( 0, 1.5, 0 )
+flag_disable_z = true
+spread = 10.0
+flatness = 0.3
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 80.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+damping = 10.0
+scale = 6.0
+scale_curve = SubResource( 20 )
+color_ramp = SubResource( 22 )
+
+[node name="Bullet" type="Area2D"]
+collision_layer = 16
+collision_mask = 47
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+rotation = 1.5708
+scale = Vector2( 0.8, 1.6 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+visible = false
+position = Vector2( -0.0417119, 0 )
+scale = Vector2( 0.703832, 0.407665 )
+
+[node name="Aiming_Area" type="Area2D" parent="."]
+visible = false
+collision_layer = 16
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Aiming_Area"]
+visible = false
+polygon = PoolVector2Array( 7.00749, -4.18664, 97.2838, -70.1727, 98.1095, 72.9309, 7.10239, 4.09291 )
+
+[node name="MovementParticles" type="Particles2D" parent="."]
+show_behind_parent = true
+position = Vector2( -8, 0 )
+rotation = 3.14159
+amount = 15
+lifetime = 0.6
+local_coords = false
+process_material = SubResource( 26 )
+
+[connection signal="body_entered" from="." to="." method="_on_Bullet_body_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
+[connection signal="body_entered" from="Aiming_Area" to="." method="_on_Aiming_Area_body_entered"]
+[connection signal="body_exited" from="Aiming_Area" to="." method="_on_Aiming_Area_body_exited"]
