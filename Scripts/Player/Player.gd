@@ -108,6 +108,6 @@ func change(level):
 	if(level==1):
 		NUMOFJUMPS = 3
 		$"Sprite/AnimatedSprite".play("triplejump")
-
-func _on_Node2D_teleport():
-	get_tree().change_scene("res://Scenes/Levels/Level1.tscn")
+		
+func change_scene(level):
+	get_tree().change_scene("res://Scenes/Levels/Level" + str(level) + ".tscn")

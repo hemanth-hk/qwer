@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Media/Proto/white.png" type="Texture" id=1]
-[ext_resource path="res://Media/Enemies/WindowsDefender/WindowsDefender.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Enemies/WindowsDefender.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scripts/Intro/IntroScene.gd" type="Script" id=3]
+
+[sub_resource type="Curve2D" id=7]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -81.1152, 339.645, 0, 0, 0, 0, 1184.01, 339.641, 0, 0, 0, 0, -81.1152, 339.645 )
+}
 
 [node name="IntroScene" type="Node2D"]
 script = ExtResource( 3 )
@@ -11,10 +16,10 @@ script = ExtResource( 3 )
 
 [node name="TextureRect" type="TextureRect" parent="bg"]
 modulate = Color( 0.00784314, 0.027451, 0.0627451, 1 )
-margin_left = -185.0
-margin_top = -143.0
-margin_right = 1161.0
-margin_bottom = 704.0
+margin_left = -1291.0
+margin_top = -880.0
+margin_right = 2464.0
+margin_bottom = 1705.0
 texture = ExtResource( 1 )
 expand = true
 stretch_mode = 1
@@ -22,7 +27,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="bg"]
-position = Vector2( 453.649, 236.203 )
-scale = Vector2( 3.75622, 3.65878 )
-texture = ExtResource( 2 )
+[node name="Path2D" type="Path2D" parent="bg"]
+curve = SubResource( 7 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="bg/Path2D"]
+position = Vector2( -81.1152, 339.645 )
+rotation = 0.479194
+rotate = false
+
+[node name="WindowsDefender" parent="bg/Path2D/PathFollow2D" instance=ExtResource( 2 )]
+position = Vector2( 0.165024, -0.412323 )
+rotation = -0.479194
+scale = Vector2( 3.75, 3.75 )
+_speed = 635
+
+[connection signal="kill_windows" from="bg/Path2D/PathFollow2D/WindowsDefender" to="bg/Path2D/PathFollow2D/WindowsDefender" method="_on_WindowsDefender_kill_windows"]

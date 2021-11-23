@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Purple Portal Sprite Sheet.png-bdfff57d86636d0e32ad1ab68299592e.stex"
+path="res://.import/Gears.png-0af8e479860c429f9869f242d0411634.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Media/Platforms_Hazards/Teleporter/Purple Portal Sprite Sheet.png"
-dest_files=[ "res://.import/Purple Portal Sprite Sheet.png-bdfff57d86636d0e32ad1ab68299592e.stex" ]
+source_file="res://Media/Platforms_Hazards/Gears/Gears.png"
+dest_files=[ "res://.import/Gears.png-0af8e479860c429f9869f242d0411634.stex" ]
 
 [params]
 

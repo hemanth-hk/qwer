@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/Hazards/Gears.gd" type="Script" id=1]
+[ext_resource path="res://Media/Platforms_Hazards/Gears/Gears.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 3.59836, 3.09648 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "Spin"
+length = 1.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.75, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 180.0, 360.0 ]
+}
+
+[node name="Gears" type="StaticBody2D"]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+visible = false
+polygon = PoolVector2Array( -8.9555, -13.7582, -3.97457, -14.8806, -1.09826, -15.933, 1.00636, -15.933, 4.09313, -15.021, 8.93374, -13.9686, 12.0907, -10.8117, 13.8445, -7.93541, 15.0371, -3.72618, 15.879, -1.20063, 15.9491, 0.833828, 15.0371, 3.71014, 14.1251, 7.5686, 12.0907, 10.7255, 8.79344, 12.8301, 3.88266, 14.8646, 1.07651, 15.9169, -0.957954, 15.9169, -3.97457, 15.1452, -8.9555, 13.1809, -12.0423, 10.7255, -14.0066, 7.98952, -15.0589, 4.13106, -15.7604, 1.04429, -15.7604, -0.779713, -14.9186, -3.86648, -13.8663, -7.72495, -11.9721, -10.7416 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Spin"
+anims/Spin = SubResource( 2 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

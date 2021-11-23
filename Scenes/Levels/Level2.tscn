@@ -1,0 +1,359 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://Scenes/Enemies/Request.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Props/Teleporter.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/GUI/Lv1GUI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Hazards/Spikes.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Hazards/PlatformSpikes.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Media/Proto/white.png" type="Texture" id=7]
+[ext_resource path="res://Media/Tilesets/OutsideLayer/OutsideLayerTileset.png" type="Texture" id=8]
+[ext_resource path="res://Media/Platforms_Hazards/Hazards.png" type="Texture" id=9]
+[ext_resource path="res://Scenes/Hazards/Gears.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Hazards/Wall.tscn" type="PackedScene" id=11]
+
+[sub_resource type="ConvexPolygonShape2D" id=15]
+points = PoolVector2Array( 16, 16, 0, 16, 0, 0.659363, 16, 0.659363 )
+
+[sub_resource type="ConvexPolygonShape2D" id=16]
+points = PoolVector2Array( 16, 16, 0.0779419, 16, 0.0779419, 0, 16, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=17]
+points = PoolVector2Array( 16, 16, 0, 16, 0, 0.0779419, 16, 0.0779419 )
+
+[sub_resource type="ConvexPolygonShape2D" id=18]
+points = PoolVector2Array( 16, 16, 0, 16, 0, 0, 16, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=19]
+points = PoolVector2Array( 16, 16, 0.249847, 16, 0.249847, 0.249847, 16, 0.249847 )
+
+[sub_resource type="ConvexPolygonShape2D" id=20]
+points = PoolVector2Array( 16, 16, 0.163895, 16, 0.163895, 0.0560455, 16, 0.0560455 )
+
+[sub_resource type="ConvexPolygonShape2D" id=21]
+points = PoolVector2Array( 16, 16, 0.0779419, 16, 0.0779419, 0.0560455, 16, 0.0560455 )
+
+[sub_resource type="ConvexPolygonShape2D" id=22]
+points = PoolVector2Array( 16, 16, 0.0779419, 16, 0.0779419, 0.163895, 16, 0.163895 )
+
+[sub_resource type="ConvexPolygonShape2D" id=23]
+points = PoolVector2Array( 45, 12, 3, 12, 3, 3, 45, 3 )
+
+[sub_resource type="ConvexPolygonShape2D" id=24]
+points = PoolVector2Array( 44.2389, 13.1491, 3.18962, 13.1491, 3.18962, 3.05503, 44.2389, 3.05503 )
+
+[sub_resource type="ConvexPolygonShape2D" id=25]
+points = PoolVector2Array( 44.2389, 11.2809, 3.05503, 11.2809, 3.05503, 4.95522, 44.2389, 4.95522 )
+
+[sub_resource type="ConvexPolygonShape2D" id=26]
+points = PoolVector2Array( 15.2158, 16, 1.75704, 16, 1.75704, 7.90019, 15.2158, 7.90019 )
+
+[sub_resource type="TileSet" id=27]
+0/name = "OutsideLayerTileset.png 0"
+0/texture = ExtResource( 8 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 48, 48 )
+0/tile_mode = 1
+0/autotile/bitmask_mode = 2
+0/autotile/bitmask_flags = [ Vector2( 0, 0 ), 432, Vector2( 0, 1 ), 438, Vector2( 0, 2 ), 54, Vector2( 1, 0 ), 504, Vector2( 1, 1 ), 511, Vector2( 1, 2 ), 63, Vector2( 2, 0 ), 216, Vector2( 2, 1 ), 219, Vector2( 2, 2 ), 27 ]
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 16, 16 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 15 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 1, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 15 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 16 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 17 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 18 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 2, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 19 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 1, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 20 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 2 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 21 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+}, {
+"autotile_coord": Vector2( 0, 1 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 22 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+2/name = "Hazards.png 2"
+2/texture = ExtResource( 9 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 24, 8, 0, 0 )
+2/tile_mode = 1
+2/autotile/bitmask_mode = 0
+2/autotile/bitmask_flags = [  ]
+2/autotile/icon_coordinate = Vector2( 0, 0 )
+2/autotile/tile_size = Vector2( 16, 16 )
+2/autotile/spacing = 0
+2/autotile/occluder_map = [  ]
+2/autotile/navpoly_map = [  ]
+2/autotile/priority_map = [  ]
+2/autotile/z_index_map = [  ]
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape = SubResource( 23 )
+2/shape_one_way = false
+2/shape_one_way_margin = 1.0
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 23 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+2/z_index = 0
+3/name = "Hazards.png 3"
+3/texture = ExtResource( 9 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 0, 0, 48, 16 )
+3/tile_mode = 1
+3/autotile/bitmask_mode = 2
+3/autotile/bitmask_flags = [ Vector2( 0, 0 ), 56, Vector2( 1, 0 ), 56, Vector2( 2, 0 ), 56 ]
+3/autotile/icon_coordinate = Vector2( 0, 0 )
+3/autotile/tile_size = Vector2( 16, 16 )
+3/autotile/spacing = 0
+3/autotile/occluder_map = [  ]
+3/autotile/navpoly_map = [  ]
+3/autotile/priority_map = [  ]
+3/autotile/z_index_map = [  ]
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape = SubResource( 24 )
+3/shape_one_way = false
+3/shape_one_way_margin = 1.0
+3/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 24 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+3/z_index = 0
+4/name = "Hazards.png 4"
+4/texture = ExtResource( 9 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 0, 16, 48, 16 )
+4/tile_mode = 1
+4/autotile/bitmask_mode = 2
+4/autotile/bitmask_flags = [ Vector2( 0, 0 ), 56, Vector2( 1, 0 ), 56, Vector2( 2, 0 ), 56 ]
+4/autotile/icon_coordinate = Vector2( 0, 0 )
+4/autotile/tile_size = Vector2( 16, 16 )
+4/autotile/spacing = 0
+4/autotile/occluder_map = [  ]
+4/autotile/navpoly_map = [  ]
+4/autotile/priority_map = [  ]
+4/autotile/z_index_map = [  ]
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape = SubResource( 25 )
+4/shape_one_way = false
+4/shape_one_way_margin = 1.0
+4/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 25 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+4/z_index = 0
+5/name = "Hazards.png 5"
+5/texture = ExtResource( 9 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 48, 0, 16, 16 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape = SubResource( 26 )
+5/shape_one_way = false
+5/shape_one_way_margin = 1.0
+5/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 26 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+5/z_index = 0
+
+[node name="Level2" type="Node2D"]
+scale = Vector2( 2, 2 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color( 0.0823745, 0.476563, 0.0465393, 1 )
+margin_left = -749.005
+margin_top = -915.555
+margin_right = 3117.0
+margin_bottom = 916.445
+rect_scale = Vector2( 0.3, 0.3 )
+rect_clip_content = true
+texture = ExtResource( 7 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( -239.62, -520.459 )
+scale = Vector2( 0.6, 0.6 )
+collision_mask = 6
+
+[node name="Gears" type="Node" parent="."]
+
+[node name="Gears" parent="Gears" instance=ExtResource( 10 )]
+position = Vector2( 116.504, -1038.78 )
+scale = Vector2( 2, 2 )
+z_index = 1
+
+[node name="Gears2" parent="Gears" instance=ExtResource( 10 )]
+position = Vector2( 251.795, -1038.97 )
+scale = Vector2( 2, 2 )
+
+[node name="Gears3" parent="Gears" instance=ExtResource( 10 )]
+position = Vector2( 184.581, -1038.97 )
+scale = Vector2( 2, 2 )
+
+[node name="TileMap" type="TileMap" parent="."]
+z_index = 2
+tile_set = SubResource( 27 )
+cell_size = Vector2( 16, 16 )
+collision_use_kinematic = true
+collision_layer = 2
+format = 1
+tile_data = PoolIntArray( -3342348, 1610612737, 2, -3342347, 1610612737, 1, -3342344, 1610612737, 0, -3211303, 0, 0, -3211302, 0, 1, -3211301, 0, 1, -3211300, 0, 1, -3211299, 0, 1, -3211298, 0, 1, -3211297, 0, 1, -3211296, 0, 1, -3211295, 0, 1, -3211294, 0, 1, -3211293, 0, 1, -3211292, 0, 1, -3211291, 0, 1, -3211290, 0, 1, -3211289, 0, 1, -3211288, 0, 1, -3211287, 0, 1, -3211286, 0, 1, -3211285, 0, 1, -3211284, 0, 1, -3211283, 0, 1, -3211282, 0, 1, -3211281, 0, 1, -3211280, 0, 1, -3211279, 0, 1, -3211278, 0, 1, -3211277, 0, 1, -3211276, 0, 1, -3211275, 0, 1, -3211274, 0, 1, -3211273, 0, 1, -3211272, 0, 1, -3211271, 0, 1, -3211270, 0, 1, -3211269, 0, 1, -3211268, 0, 1, -3211267, 0, 1, -3211266, 0, 1, -3211265, 0, 1, -3276800, 0, 1, -3276799, 0, 1, -3276798, 0, 1, -3276797, 0, 1, -3276796, 0, 1, -3276795, 0, 1, -3276794, 0, 1, -3276793, 0, 1, -3276792, 0, 1, -3276791, 0, 2, -3145767, 0, 65536, -3211255, 0, 65538, -3080231, 0, 65536, -3145719, 0, 65538, -3014695, 0, 65536, -3080183, 0, 65538, -2949159, 0, 65536, -3014647, 0, 65538, -2883623, 0, 65536, -2883602, 1, 1, -2883600, 1, 2, -2949111, 0, 65538, -2818087, 0, 65536, -2883575, 0, 65538, -2752548, 1610612737, 1, -2752547, 1610612737, 1, -2424871, 0, 65536, -2490359, 0, 65538, -2359335, 0, 65536, -2424823, 0, 65538, -2293799, 0, 65536, -2359287, 0, 65538, -2228263, 0, 65536, -2293751, 0, 65538, -2162727, 0, 65536, -2228215, 0, 65538, -2097191, 0, 65536, -2162679, 0, 65538, -2031655, 0, 131072, -2031654, 0, 131073, -2031653, 0, 131073, -2031652, 0, 131073, -2031651, 0, 131073, -2031650, 0, 131073, -2031649, 0, 131073, -2031648, 0, 131073, -2031647, 0, 131073, -2031646, 0, 131073, -2031645, 0, 131073, -2031644, 0, 131073, -2031643, 0, 131073, -2031642, 0, 131073, -2031641, 0, 131073, -2031640, 0, 131073, -2031639, 0, 131073, -2031638, 0, 131073, -2031637, 0, 131073, -2031636, 0, 131073, -2031635, 0, 131073, -2031628, 0, 131073, -2031627, 0, 131073, -2031626, 0, 131073, -2031625, 0, 131073, -2031624, 0, 131073, -2031623, 0, 131073, -2031622, 0, 131073, -2031621, 0, 131073, -2031620, 0, 131073, -2031619, 0, 131073, -2031618, 0, 131073, -2031617, 0, 131073, -2097152, 0, 131073, -2097151, 0, 131073, -2097150, 0, 131073, -2097149, 0, 131073, -2097148, 0, 131073, -2097147, 0, 131073, -2097146, 0, 131073, -2097145, 0, 131073, -2097144, 0, 131073, -2097143, 0, 131074, -393226, 2, 0 )
+
+[node name="PlatformSpikes" type="Node" parent="."]
+
+[node name="PlatformSpikes3" parent="PlatformSpikes" instance=ExtResource( 6 )]
+position = Vector2( -481.927, -1000.69 )
+rotation = 3.14159
+scale = Vector2( 4, 4 )
+
+[node name="PlatformSpikes10" parent="PlatformSpikes" instance=ExtResource( 6 )]
+position = Vector2( -8.84799, -1410.91 )
+rotation = 3.14159
+scale = Vector2( 4, 4 )
+
+[node name="PlatformSpikes9" parent="PlatformSpikes" instance=ExtResource( 6 )]
+position = Vector2( -202.946, -1183.56 )
+rotation = 3.14159
+scale = Vector2( 3, 3 )
+
+[node name="PlatformSpikes5" parent="PlatformSpikes" instance=ExtResource( 6 )]
+position = Vector2( -459.235, -1329.06 )
+rotation = 3.14159
+scale = Vector2( 4, 4 )
+
+[node name="PlatformSpikes7" parent="PlatformSpikes" instance=ExtResource( 6 )]
+position = Vector2( -810.298, -1389.12 )
+rotation = 3.14159
+scale = Vector2( 3, 3 )
+
+[node name="PlatformSpikes8" parent="PlatformSpikes" instance=ExtResource( 6 )]
+position = Vector2( -941.111, -1166.08 )
+rotation = 3.14159
+scale = Vector2( 3, 3 )
+
+[node name="Spikes" type="Node" parent="."]
+
+[node name="StaticBody2D12" parent="Spikes" instance=ExtResource( 5 )]
+position = Vector2( -463.668, -1556.89 )
+rotation = 3.14159
+scale = Vector2( 3, 3 )
+
+[node name="StaticBody2D14" parent="Spikes" instance=ExtResource( 5 )]
+position = Vector2( -366.225, -1556.89 )
+rotation = 3.14159
+scale = Vector2( 3, 3 )
+
+[node name="StaticBody2D13" parent="Spikes" instance=ExtResource( 5 )]
+position = Vector2( -562.257, -1555.4 )
+rotation = 3.14159
+scale = Vector2( 3, 3 )
+
+[node name="Requests" type="Node" parent="."]
+
+[node name="Request" parent="Requests" instance=ExtResource( 1 )]
+position = Vector2( -1021.94, -1439.77 )
+scale = Vector2( 3, 3 )
+
+[node name="Request2" parent="Requests" instance=ExtResource( 1 )]
+position = Vector2( -232.333, -1405.31 )
+scale = Vector2( 3, 3 )
+
+[node name="Request3" parent="Requests" instance=ExtResource( 1 )]
+position = Vector2( -653.358, -1219.52 )
+scale = Vector2( 3, 3 )
+
+[node name="Teleporter4" parent="." instance=ExtResource( 2 )]
+position = Vector2( -615.749, -657.198 )
+rotation = 1.5708
+scale = Vector2( 1.9, 1 )
+
+[node name="Teleporter2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 151.989, -638.699 )
+rotation = -1.5708
+scale = Vector2( 1.9, 1 )
+
+[node name="lvl1gui" parent="." instance=ExtResource( 3 )]
+
+[node name="Wall" parent="." instance=ExtResource( 11 )]
+position = Vector2( -597.498, -648.048 )
+scale = Vector2( 1.5, 3.6 )
