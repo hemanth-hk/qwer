@@ -331,7 +331,7 @@ scale = Vector2( 3, 3 )
 [node name="Requests" type="Node" parent="."]
 
 [node name="Request" parent="Requests" instance=ExtResource( 1 )]
-position = Vector2( -1021.94, -1439.77 )
+position = Vector2( -1019.11, -1439.77 )
 scale = Vector2( 2, 2 )
 
 [node name="Request2" parent="Requests" instance=ExtResource( 1 )]

@@ -8,7 +8,7 @@ var target_name = ""
 func _physics_process(delta):
 	translate(direction*speed*delta)
 	speed = 120
-	print(target)
+#	print(target)
 	if target:
 		direction = target.global_position - global_position
 		direction = direction.normalized()

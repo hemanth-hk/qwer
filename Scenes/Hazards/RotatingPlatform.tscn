@@ -1,0 +1,93 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Media/Platforms_Hazards/Hazards.png" type="Texture" id=1]
+[ext_resource path="res://Media/Platforms_Hazards/RotatingPlatform/Hinge.png" type="Texture" id=2]
+[ext_resource path="res://Media/Platforms_Hazards/Wall/Wall_stable.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/Hazards/RotatingPlatform.gd" type="Script" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 21.666, 2.92541 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 21.6045, 3.30182 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 21.409, 4.03706 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "rotate"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 180.0 ]
+}
+
+[node name="Rotating Platform" type="Node2D"]
+position = Vector2( -23.3085, 0.157486 )
+script = ExtResource( 4 )
+
+[node name="Platform" type="StaticBody2D" parent="."]
+position = Vector2( -26.1434, 0.262962 )
+collision_layer = 8
+collision_mask = 7
+
+[node name="Sprite" type="Sprite" parent="Platform"]
+position = Vector2( 0.10511, 0 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 16, 48, 16 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
+visible = false
+position = Vector2( 0.802799, -0.0834274 )
+shape = SubResource( 1 )
+
+[node name="Wall" type="StaticBody2D" parent="."]
+position = Vector2( -20.5229, 0.420448 )
+collision_layer = 8
+collision_mask = 7
+
+[node name="Sprite" type="Sprite" parent="Wall"]
+position = Vector2( 46.4782, -1.45576 )
+rotation = 1.5708
+scale = Vector2( 0.6, 1.25 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+visible = false
+position = Vector2( 44.7816, -3.8147e-06 )
+shape = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="Wall"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall/Area2D"]
+visible = false
+position = Vector2( 45.188, -3.8147e-06 )
+shape = SubResource( 3 )
+
+[node name="Hinge" type="StaticBody2D" parent="."]
+position = Vector2( -23.0456, 0.0527344 )
+collision_layer = 8
+collision_mask = 7
+
+[node name="Sprite" type="Sprite" parent="Hinge"]
+position = Vector2( 23.4297, -0.616081 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hinge"]
+visible = false
+polygon = PoolVector2Array( 19.2698, -6.57752, 27.4077, -6.64767, 31.5468, -2.50859, 31.4766, 2.26187, 27.3375, 6.47111, 19.4102, 6.54126, 15.4114, 2.33203, 15.4815, -2.71906 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/rotate = SubResource( 4 )
+
+[connection signal="area_entered" from="Wall/Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="body_entered" from="Wall/Area2D" to="." method="_on_Area2D_body_entered"]

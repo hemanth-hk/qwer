@@ -46,11 +46,14 @@ var y_velo = 0
 var NUMOFJUMPS = 2
 var facing_right = false
 var dead = false
+var gun_allowed = false
 
 func _physics_process(_delta):
 	if not dead:
 		var move_dir = 0
 	#	print(get_node("MovementParticles").process_material.initial_velocity)
+		if gun_allowed and Input.is_action_just_pressed("ui_mouse_left"):
+			fire()
 		if Input.is_action_pressed("ui_right"):
 			move_dir += 1
 		if Input.is_action_pressed("ui_left"):
@@ -104,10 +107,22 @@ func die():
 func _on_WindowsDefender_die():
 	die()
 
+func fire():
+	var bullet_scene = load("res://Scenes/Hazards/PlayerBullet.tscn")
+	var bullet = bullet_scene.instance()
+	bullet.transform = transform
+	print(position)
+	print(self.position)
+	get_parent().add_child(bullet)
+
 func change(level):
+	print(level)
 	if(level==1):
 		NUMOFJUMPS = 3
 		$"Sprite/AnimatedSprite".play("triplejump")
+	if(level==3):
+		$"Sprite/AnimatedSprite".play("gun")
+		gun_allowed = true
 		
 func change_scene(level):
 	get_tree().change_scene("res://Scenes/Levels/Level" + str(level) + ".tscn")

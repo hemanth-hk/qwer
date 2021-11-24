@@ -11,5 +11,7 @@ func _physics_process(delta):
 
 func _on_Area2D_body_entered(body):
 	if body.name == "Player":
-		body.change(1)
-		get_parent().queue_free()
+		var level = int(get_tree().get_current_scene().name[get_tree().get_current_scene().name.length()-1])
+		print(get_tree().get_current_scene().name)
+		body.change(level)
+		queue_free()

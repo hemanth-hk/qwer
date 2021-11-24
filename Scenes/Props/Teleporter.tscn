@@ -95,7 +95,7 @@ script = ExtResource( 3 )
 rotation = 4.71239
 frames = SubResource( 17 )
 animation = "open"
-frame = 4
+frame = 7
 playing = true
 
 [node name="Sprite" type="Sprite" parent="."]

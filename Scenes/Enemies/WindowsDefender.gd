@@ -22,7 +22,7 @@ func _on_Area2D4_body_entered(body):
 	if body.name == "Player":
 		emit_signal("die")	
 
-func _on_Area2D_body_entered(body):
+func die(body):
 	if body and body.name == "Player":
 		get_node("Area2D2").queue_free()
 		get_node("Area2D3").queue_free()
@@ -36,4 +36,5 @@ func _on_Area2D_body_entered(body):
 		get_parent().add_child(scene_instance)
 		queue_free()
 
-		
+func _on_Area2D_body_entered(body):
+	die(body)
