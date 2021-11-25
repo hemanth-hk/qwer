@@ -64,43 +64,43 @@ atlas = ExtResource( 1 )
 region = Rect2( 128, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=13]
-atlas = ExtResource( 4 )
+atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=14]
-atlas = ExtResource( 4 )
+atlas = ExtResource( 5 )
 region = Rect2( 32, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 4 )
+atlas = ExtResource( 5 )
 region = Rect2( 64, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=16]
-atlas = ExtResource( 4 )
+atlas = ExtResource( 5 )
 region = Rect2( 96, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=17]
-atlas = ExtResource( 4 )
+atlas = ExtResource( 5 )
 region = Rect2( 128, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=18]
-atlas = ExtResource( 5 )
+atlas = ExtResource( 4 )
 region = Rect2( 0, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=19]
-atlas = ExtResource( 5 )
+atlas = ExtResource( 4 )
 region = Rect2( 32, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=20]
-atlas = ExtResource( 5 )
+atlas = ExtResource( 4 )
 region = Rect2( 64, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=21]
-atlas = ExtResource( 5 )
+atlas = ExtResource( 4 )
 region = Rect2( 96, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=22]
-atlas = ExtResource( 5 )
+atlas = ExtResource( 4 )
 region = Rect2( 128, 0, 32, 32 )
 
 [sub_resource type="SpriteFrames" id=23]
@@ -112,12 +112,12 @@ animations = [ {
 }, {
 "frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
 "loop": true,
-"name": "triplejump",
+"name": "gun",
 "speed": 15.0
 }, {
 "frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ) ],
 "loop": true,
-"name": "gun",
+"name": "triplejump",
 "speed": 15.0
 } ]
 
@@ -205,14 +205,13 @@ polygon = PoolVector2Array( -8.48643, -13.3821, -15.5305, -6.43726, -15.5305, 5.
 [node name="Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( -0.595276, -0.595276 )
 frames = SubResource( 7 )
-frame = 3
+frame = 4
 playing = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Sprite"]
 position = Vector2( 0.237701, 0.267138 )
 scale = Vector2( 0.6, 0.6 )
 frames = SubResource( 23 )
-frame = 4
 playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
