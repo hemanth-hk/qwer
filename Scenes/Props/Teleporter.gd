@@ -11,5 +11,6 @@ func _ready():
 
 func _on_Area2D_body_entered(body):
 	var teleporter = int(self.name[self.name.length()-1])
+	print(teleporter)
 	if body.name == "Player":
-		body.change_scene(teleporter+1)
+		body.change_scene(teleporter)

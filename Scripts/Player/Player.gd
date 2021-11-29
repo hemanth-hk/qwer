@@ -32,6 +32,7 @@
 
 extends KinematicBody2D
 
+export var fire_rate = 0.2
 
 const ACC = 2048
 const MOVE_SPEED = 500
@@ -46,18 +47,26 @@ var y_velo = 0
 var NUMOFJUMPS = 2
 var facing_right = false
 var dead = false
-var gun_allowed = false
+var can_fire = true
 
 func _physics_process(_delta):
 	if not dead:
 		var move_dir = 0
+		if Variables.powers[0]:
+			NUMOFJUMPS = 3
 	#	print(get_node("MovementParticles").process_material.initial_velocity)
-		if gun_allowed and Input.is_action_just_pressed("ui_mouse_left"):
+		if Variables.powers[1] and Input.is_action_just_pressed("ui_mouse_left") and can_fire:
 			fire()
 		if Input.is_action_pressed("ui_right"):
 			move_dir += 1
+			$Node2D/Position2D.position = Vector2(18,0)
+			$Node2D/Sprite.position = Vector2(18,0)
+			$Node2D/Sprite.rotation_degrees = 0
 		if Input.is_action_pressed("ui_left"):
 			move_dir -= 1
+			$Node2D/Position2D.position = Vector2(-20,0)
+			$Node2D/Sprite.position = Vector2(-20,0)
+			$Node2D/Sprite.rotation_degrees = 180
 		if move_dir != 0:
 			motion += move_dir * ACC * _delta
 			motion = clamp(motion, -MOVE_SPEED, MOVE_SPEED)
@@ -96,6 +105,7 @@ func _physics_process(_delta):
 
 func die():
 	dead = true
+	Variables.deaths+=1
 	get_node("MovementParticles").emitting = false
 	$"AnimationPlayer".play("death")
 	yield(get_tree().create_timer(0.2), "timeout")
@@ -110,19 +120,29 @@ func _on_WindowsDefender_die():
 func fire():
 	var bullet_scene = load("res://Scenes/Hazards/PlayerBullet.tscn")
 	var bullet = bullet_scene.instance()
-	bullet.transform = transform
+	print(get_viewport().get_mouse_position().angle_to_point(position))
 	print(position)
-	print(self.position)
-	get_parent().add_child(bullet)
+#	bullet.direction = ($Node2D/Position2D.global_position-global_position).normalized()
+	bullet.global_position = $Node2D/Position2D.global_position
+	bullet.rotation_degrees = self.rotation_degrees
+	get_tree().get_root().add_child(bullet)
+	can_fire = false
+	yield(get_tree().create_timer(fire_rate), "timeout")
+	can_fire = true
+#	bullet.transform = $Sprite/Position2D.transform
+#	get_parent().add_child(bullet)
 
 func change(level):
 	print(level)
 	if(level==1):
-		NUMOFJUMPS = 3
 		$"Sprite/AnimatedSprite".play("triplejump")
+		Variables.powers[0] = true
 	if(level==3):
 		$"Sprite/AnimatedSprite".play("gun")
-		gun_allowed = true
+		Variables.powers[1] = true
+	if(level==4):
+		$"Sprite/AnimatedSprite".play("reflect")
+		Variables.powers[2] = true
 		
 func change_scene(level):
 	get_tree().change_scene("res://Scenes/Levels/Level" + str(level) + ".tscn")

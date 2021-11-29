@@ -32,7 +32,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 0.127228, 0.364528 )
+extents = Vector2( 1.16162e+06, 929618 )
 
 [sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 2.13415, 10.979 )
@@ -61,11 +61,11 @@ script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 6 )
-frame = 3
+frame = 2
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.00883865, 2.48368 )
+position = Vector2( -0.178661, -0.57882 )
 scale = Vector2( 1e-05, 1e-05 )
 shape = SubResource( 7 )
 

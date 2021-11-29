@@ -431,17 +431,17 @@ scale = Vector2( 2, 2 )
 position = Vector2( -653.358, -1219.52 )
 scale = Vector2( 2, 2 )
 
-[node name="Teleporter4" parent="." instance=ExtResource( 2 )]
+[node name="Teleporter45" parent="." instance=ExtResource( 2 )]
 position = Vector2( -615.749, -657.198 )
 rotation = 1.5708
 scale = Vector2( 1.9, 1 )
 
-[node name="Teleporter2" parent="." instance=ExtResource( 2 )]
+[node name="Teleporter23" parent="." instance=ExtResource( 2 )]
 position = Vector2( 151.989, -638.699 )
 rotation = -1.5708
 scale = Vector2( 1.9, 1 )
 
-[node name="Teleporter1_2" parent="." instance=ExtResource( 2 )]
+[node name="Teleporter21" parent="." instance=ExtResource( 2 )]
 position = Vector2( -233.993, -475.652 )
 rotation = 3.14159
 scale = Vector2( 1.9, 1 )

@@ -22,19 +22,18 @@ func _on_Area2D4_body_entered(body):
 	if body.name == "Player":
 		emit_signal("die")	
 
-func die(body):
-	if body and body.name == "Player":
-		get_node("Area2D2").queue_free()
-		get_node("Area2D3").queue_free()
-		get_node("Area2D4").queue_free()
-		yield(get_tree().create_timer(0.1), "timeout")
-		var pickup = load("res://Scenes/Pickups/Pickup.tscn")
-		var scene_instance = pickup.instance()
-		$"AnimationPlayer".play("kill_windows")
-		get_node("CollisionShape2D").queue_free()
-		yield(get_tree().create_timer(0.3), "timeout")
-		get_parent().add_child(scene_instance)
-		queue_free()
+func die():
+	get_node("Area2D2").queue_free()
+	get_node("Area2D3").queue_free()
+	get_node("Area2D4").queue_free()
+	var pickup = load("res://Scenes/Pickups/Pickup.tscn")
+	var scene_instance = pickup.instance()
+	$"AnimationPlayer".play("kill_windows")
+	get_node("CollisionShape2D").queue_free()
+	yield(get_tree().create_timer(0.2), "timeout")
+	get_parent().add_child(scene_instance)
+	queue_free()
 
 func _on_Area2D_body_entered(body):
-	die(body)
+	if body and body.name == "Player":
+		die()

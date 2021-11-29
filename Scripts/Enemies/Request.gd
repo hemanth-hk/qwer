@@ -20,5 +20,8 @@ func _on_Area2D_body_entered(body):
 	if body.name=="Player":
 		body.die()
 
-
-
+func die():
+	yield(get_tree().create_timer(0.1), "timeout")
+	$"AnimationPlayer".play("kill_request")
+	yield(get_tree().create_timer(0.3), "timeout")
+	queue_free()

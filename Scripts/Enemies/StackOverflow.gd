@@ -37,7 +37,7 @@ func _ready():
 	
 func _on_Timer_timeout():
 	spawn()
-	get_node("../bg/ProgressBar").decrease_value(2)
+#	get_node("../bg/ProgressBar").decrease_value(2)
 	$Timer.start(4)
 
 func _on_Area2D_body_entered(body):
@@ -47,5 +47,14 @@ func _on_Area2D_body_entered(body):
 func _on_Area2D_area_entered(area):
 	if area.name == "PlayerBullet":
 		get_node("../bg/ProgressBar").decrease_value(2)
+		area.queue_free()
 	if area.name == "Bullet":
 		get_node("../bg/ProgressBar").decrease_value(5)
+		area.queue_free()
+	var val = get_node("../bg/ProgressBar/ProgressBar2").value
+	if val<66:
+		Variables.powers[0] = false
+	if val<33:
+		Variables.powers[2] = false
+	if val<=0:
+		get_tree().change_scene("res://Scenes/Levels/Level5.tscn")	

@@ -54,6 +54,10 @@ config/name="BugGame"
 run/main_scene="res://Scenes/Inro/IntroScene.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Variables="*res://Scenes/Variables.tscn"
+
 [editor_plugins]
 
 enabled=PoolStringArray( "res://addons/dialogic/plugin.cfg" )

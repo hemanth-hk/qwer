@@ -14,5 +14,5 @@ func _physics_process(delta):
 
 func _on_PlayerBullet_body_entered(body):
 	if body.is_in_group("enemy"):
-		body.queue_free()
+		body.die()
 	queue_free()
