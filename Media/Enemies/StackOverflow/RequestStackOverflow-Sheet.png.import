@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spotlight_1.png-4c59bd3103ffb6f928dd2728939289cf.stex"
+path="res://.import/RequestStackOverflow-Sheet.png-3a8b4b001edb21daead4252a562077e7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Media/Textures/spotlight_1.png"
-dest_files=[ "res://.import/spotlight_1.png-4c59bd3103ffb6f928dd2728939289cf.stex" ]
+source_file="res://Media/Enemies/StackOverflow/RequestStackOverflow-Sheet.png"
+dest_files=[ "res://.import/RequestStackOverflow-Sheet.png-3a8b4b001edb21daead4252a562077e7.stex" ]
 
 [params]
 

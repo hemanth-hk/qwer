@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Media/Tilesets/OutsideLayer/OutsideLayerTileset.png" type="Texture" id=2]
@@ -7,7 +7,7 @@
 [ext_resource path="res://Media/Proto/white.png" type="Texture" id=5]
 [ext_resource path="res://Media/Tilesets/Pipes/Pipes.png" type="Texture" id=6]
 [ext_resource path="res://Scenes/Hazards/Spikes.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/Enemies/WindowsDefender.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Enemies/WindowsDefenderWithPath.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Props/Teleporter.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/GUI/Lv1GUI.tscn" type="PackedScene" id=10]
 
@@ -313,11 +313,6 @@ points = PoolVector2Array( 15.2158, 16, 1.75704, 16, 1.75704, 7.90019, 15.2158, 
 } ]
 5/z_index = 0
 
-[sub_resource type="Curve2D" id=15]
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -449.991, -617.218, 0, 0, 0, 0, -450.659, -542.133, 0, 0, 0, 0, -379.079, -541.933, 0, 0, 0, 0, -379.5, -726.5, 0, 0, 0, 0, -255.461, -607.964, 0, 0, 0, 0, -53.9389, -672.391, 0, 0, 0, 0, -53.9817, -760.909, 0, 0, 0, 0, -271.948, -761.539, 0, 0, 0, 0, -379.356, -726.577, 0, 0, 0, 0, -449.991, -617.218 )
-}
-
 [node name="Level1" type="Node2D"]
 scale = Vector2( 2, 2 )
 
@@ -418,25 +413,10 @@ scale = Vector2( 3, 3 )
 position = Vector2( -960.909, -1035.22 )
 scale = Vector2( 3, 3 )
 
-[node name="Path2D" type="Path2D" parent="."]
-curve = SubResource( 15 )
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2( -449.991, -617.218 )
-rotation = -1.5708
-rotate = false
-
-[node name="WindowsDefender" parent="Path2D/PathFollow2D" instance=ExtResource( 8 )]
-position = Vector2( -0.653503, 0.0604858 )
-rotation = 1.5708
-_speed = 50
+[node name="Path2D" parent="." instance=ExtResource( 8 )]
 
 [node name="Teleporter1" parent="." instance=ExtResource( 9 )]
 position = Vector2( -303.208, -794.377 )
 scale = Vector2( 1.9, 1 )
 
 [node name="lvl1gui" parent="." instance=ExtResource( 10 )]
-
-[connection signal="die" from="Path2D/PathFollow2D/WindowsDefender" to="Player" method="_on_WindowsDefender_die"]
-[connection signal="kill_windows" from="Path2D/PathFollow2D/WindowsDefender" to="Player" method="_on_WindowsDefender_kill_windows"]
-[connection signal="kill_windows" from="Path2D/PathFollow2D/WindowsDefender" to="Path2D/PathFollow2D/WindowsDefender" method="_on_WindowsDefender_kill_windows"]

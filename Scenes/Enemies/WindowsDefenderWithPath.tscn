@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Enemies/WindowsDefender.tscn" type="PackedScene" id=2]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, -449.991, -617.218, 0, 0, 0, 0, -450.659, -542.133, 0, 0, 0, 0, -379.079, -541.933, 0, 0, 0, 0, -379.5, -726.5, 0, 0, 0, 0, -255.461, -607.964, 0, 0, 0, 0, -53.9389, -672.391, 0, 0, 0, 0, -53.9817, -760.909, 0, 0, 0, 0, -271.948, -761.539, 0, 0, 0, 0, -379.356, -726.577, 0, 0, 0, 0, -449.991, -617.218 )
+}
+
+[node name="Path2D" type="Path2D"]
+curve = SubResource( 1 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2( -449.991, -617.218 )
+rotation = -1.5708
+rotate = false
+
+[node name="WindowsDefender" parent="PathFollow2D" instance=ExtResource( 2 )]
+position = Vector2( -0.653503, 0.0604858 )
+rotation = 1.5708
+_speed = 50
+
+[connection signal="kill_windows" from="PathFollow2D/WindowsDefender" to="PathFollow2D/WindowsDefender" method="_on_WindowsDefender_kill_windows"]
