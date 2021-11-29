@@ -1,0 +1,20 @@
+{
+	"color": "#ff000000",
+	"description": "",
+	"display_name": "",
+	"display_name_bool": false,
+	"id": "character-1637835469.json",
+	"mirror_portraits": false,
+	"name": "⋉Ꭵ⋊",
+	"nickname": "",
+	"nickname_bool": false,
+	"offset_x": 0,
+	"offset_y": -150,
+	"portraits": [
+		{
+			"name": "Default",
+			"path": "res://Media/Dialogues/Player/Basic.png"
+		}
+	],
+	"scale": 1000
+}

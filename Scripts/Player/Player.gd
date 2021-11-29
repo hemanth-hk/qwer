@@ -126,3 +126,5 @@ func change(level):
 		
 func change_scene(level):
 	get_tree().change_scene("res://Scenes/Levels/Level" + str(level) + ".tscn")
+
+
