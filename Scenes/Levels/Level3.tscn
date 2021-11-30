@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Scenes/Hazards/PlatformSpikes.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Hazards/Spikes.tscn" type="PackedScene" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Scenes/Hazards/RotatingPlatform.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Pickups/Pickup.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scripts/Levels/Level3.gd" type="Script" id=14]
+[ext_resource path="res://Music/Level_Music/Level3.wav" type="AudioStream" id=15]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Pipes.png 0"
@@ -323,10 +324,10 @@ script = ExtResource( 14 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
 modulate = Color( 0.0823745, 0.476563, 0.0465393, 1 )
-margin_left = -767.405
-margin_top = -955.446
-margin_right = 3380.59
-margin_bottom = 4649.55
+margin_left = -1590.0
+margin_top = -1509.0
+margin_right = 8423.0
+margin_bottom = 6965.0
 rect_scale = Vector2( 0.3, 0.3 )
 rect_clip_content = true
 texture = ExtResource( 9 )
@@ -405,32 +406,33 @@ position = Vector2( -1002.29, -1038.33 )
 scale = Vector2( 2, 2 )
 
 [node name="Gears3" parent="Gears" instance=ExtResource( 10 )]
-position = Vector2( -841.931, 181.726 )
+position = Vector2( -858.31, 205.665 )
 scale = Vector2( 2, 2 )
 
 [node name="Gears4" parent="Gears" instance=ExtResource( 10 )]
-position = Vector2( -762.961, 174.205 )
+position = Vector2( -741.542, 204.443 )
 scale = Vector2( 2.5, 2.5 )
 
 [node name="Gears5" parent="Gears" instance=ExtResource( 10 )]
-position = Vector2( -672.226, 167.584 )
+position = Vector2( -599.151, 204.122 )
 scale = Vector2( 3, 3 )
 
 [node name="Gears6" parent="Gears" instance=ExtResource( 10 )]
-position = Vector2( -562.367, 156.656 )
+position = Vector2( -437.635, 205.793 )
 scale = Vector2( 3.5, 3.5 )
 
 [node name="Gears7" parent="Gears" instance=ExtResource( 10 )]
-position = Vector2( -436.952, 147.72 )
+position = Vector2( -230.325, 196.857 )
 scale = Vector2( 4, 4 )
 
 [node name="Teleporter32" parent="." instance=ExtResource( 3 )]
-position = Vector2( -611.499, -657.069 )
+visible = false
+position = Vector2( -625.999, -654.819 )
 rotation = 1.5708
 scale = Vector2( 1.9, 1 )
 
 [node name="Teleporter34" parent="." instance=ExtResource( 3 )]
-position = Vector2( -624.701, -655.735 )
+position = Vector2( -615.451, -657.735 )
 rotation = 1.5708
 scale = Vector2( 1.9, 1 )
 
@@ -438,7 +440,19 @@ scale = Vector2( 1.9, 1 )
 
 [node name="Request" parent="." instance=ExtResource( 11 )]
 position = Vector2( -243.52, -688.771 )
-scale = Vector2( 2, 2 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Request2" parent="." instance=ExtResource( 11 )]
+position = Vector2( -63.24, -297.063 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Request3" parent="." instance=ExtResource( 11 )]
+position = Vector2( 89.6676, -183.798 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Request4" parent="." instance=ExtResource( 11 )]
+position = Vector2( -123.814, -63.5491 )
+scale = Vector2( 1.5, 1.5 )
 
 [node name="Pickup" parent="." instance=ExtResource( 13 )]
 position = Vector2( -586.738, 74.6363 )
@@ -446,3 +460,6 @@ position = Vector2( -586.738, 74.6363 )
 [node name="Rotating Platform" parent="." instance=ExtResource( 12 )]
 position = Vector2( 18.0745, -503.667 )
 scale = Vector2( 2.6, 2.6 )
+
+[node name="bg" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )

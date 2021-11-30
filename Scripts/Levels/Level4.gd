@@ -4,6 +4,11 @@ var chosen
 var pickup = preload("res://Scenes/Pickups/Pickup.tscn")
 var done = false
 
+
+func _ready():
+	$"bg".play()
+
+
 func _process(delta):
 	if not done and len($Requests.get_children()) == 0:
 		var pickup_scene = pickup.instance()

@@ -47,10 +47,22 @@ var y_velo = 0
 var NUMOFJUMPS = 2
 var facing_right = false
 var dead = false
-var can_fire = true
+var can_fire = false
 
 func _physics_process(_delta):
+	if not Variables.powers[1]:
+		$"Node2D".visible = false
+		
+	if not Variables.powers[2]:
+		$"Area2D".visible = false
 	if not dead:
+		if Variables.powers[2] == true:
+			$"Sprite/AnimatedSprite".play("reflect")
+		elif Variables.powers[1] == true:
+			$"Sprite/AnimatedSprite".play("gun")
+		elif Variables.powers[0] == true:
+			$"Sprite/AnimatedSprite".play("triplejump")
+			
 		var move_dir = 0
 		if Variables.powers[0]:
 			NUMOFJUMPS = 3
@@ -111,10 +123,31 @@ func die():
 	$DeathMusic.play()
 	get_node("MovementParticles").emitting = false
 	$"AnimationPlayer".play("death")
+	if Variables.current_scene == 1:
+		$"../Level1BG".stop()
+		Variables.powers[0] = false
+	if Variables.current_scene == 2:
+		$"../bg".stop()
+	if Variables.current_scene == 3:
+		$"../bg".stop()
+		Variables.powers[1] = false
+	if Variables.current_scene == 4:
+		$"../bg".stop()
+		Variables.powers[2] = false
+	if Variables.current_scene == 5:
+		$"../bg".stop()
+	
 	yield(get_tree().create_timer(0.2), "timeout")
 	get_node("DeathParticles").emitting = true
 	yield(get_tree().create_timer(1), "timeout")
-	get_tree().change_scene("res://Scenes/Levels/Level1.tscn")
+	if Variables.current_scene == 1:
+		get_tree().change_scene("res://Scenes/Levels/defender.tscn")
+	if Variables.current_scene == 2 or Variables.current_scene == 4:
+		get_tree().change_scene("res://Scenes/Levels/github.tscn")
+	if Variables.current_scene == 3:
+		get_tree().change_scene("res://Scenes/Levels/reddit.tscn")
+	if Variables.current_scene == 5:
+		get_tree().change_scene("res://Scenes/Levels/stackoverflow.tscn")
 #	$"Sprite/AnimatedSprite".play("default")
 
 func _on_WindowsDefender_die():
@@ -141,15 +174,25 @@ func change(level):
 	if(level==1):
 		$"Sprite/AnimatedSprite".play("triplejump")
 		Variables.powers[0] = true
+		$"pickup".play()
 	if(level==3):
 		$"Sprite/AnimatedSprite".play("gun")
 		Variables.powers[1] = true
+		$"Node2D".visible = true
 	if(level==4):
 		$"Sprite/AnimatedSprite".play("reflect")
 		Variables.powers[2] = true
+		$"Area2D".visible = true
 		
 func change_scene(level):
-	get_tree().change_scene("res://Scenes/Levels/Level" + str(level) + ".tscn")
+	if level == 1:
+		get_tree().change_scene("res://Scenes/Levels/defender.tscn")
+	if level == 2 or level == 4:
+		get_tree().change_scene("res://Scenes/Levels/github.tscn")
+	if level == 3:
+		get_tree().change_scene("res://Scenes/Levels/reddit.tscn")
+	if level == 5:
+		get_tree().change_scene("res://Scenes/Levels/stackoverflow.tscn")
 
 
 func _on_Area2D_area_entered(area):

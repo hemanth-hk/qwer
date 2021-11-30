@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Media/Story/Reddit.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Levels/github.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/Story/reddit.gd" type="Script" id=3]
+
+[node name="codeVault" instance=ExtResource( 2 )]
+script = ExtResource( 3 )
+
+[node name="TextureRect" parent="HBoxContainer/VBoxContainer" index="0"]
+texture = ExtResource( 1 )

@@ -10,8 +10,10 @@ extends Control
 func _ready():
 	$"Level1Start".play()
 	yield(get_tree().create_timer(3), "timeout")
-	get_tree().change_scene("res://Scenes/Levels/Level1.tscn")
-
+	if Variables.current_scene == 2:
+		get_tree().change_scene("res://Scenes/Levels/Level2.tscn")
+	elif Variables.current_scene == 4:
+		get_tree().change_scene("res://Scenes/Levels/Level4.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

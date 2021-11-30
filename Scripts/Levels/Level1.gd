@@ -1,6 +1,7 @@
 extends Node2D
 
 func _ready():
-	$Level1Start.play()
+	$Level1BG.play()
+	
 	
 	
