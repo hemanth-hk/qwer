@@ -439,7 +439,7 @@ position = Vector2( -653.358, -1219.52 )
 scale = Vector2( 2, 2 )
 
 [node name="Teleporter45" parent="." instance=ExtResource( 3 )]
-position = Vector2( -615.749, -657.198 )
+position = Vector2( -618.269, -657.828 )
 rotation = 1.5708
 scale = Vector2( 1.9, 1 )
 

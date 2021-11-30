@@ -345,7 +345,6 @@ tile_data = PoolIntArray( -3145764, -1610612733, 0, -3080228, 0, 65536, -3014692
 [node name="Player" parent="." instance=ExtResource( 4 )]
 position = Vector2( -524.13, -648.562 )
 scale = Vector2( 0.6, 0.6 )
-fire_rate = 0.6
 
 [node name="TileMap" type="TileMap" parent="."]
 z_index = 1
@@ -431,7 +430,6 @@ rotation = 1.5708
 scale = Vector2( 1.9, 1 )
 
 [node name="Teleporter34" parent="." instance=ExtResource( 3 )]
-visible = false
 position = Vector2( -624.701, -655.735 )
 rotation = 1.5708
 scale = Vector2( 1.9, 1 )

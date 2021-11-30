@@ -32,7 +32,7 @@
 
 extends KinematicBody2D
 
-export var fire_rate = 0.2
+export var fire_rate = 0.6
 
 const ACC = 2048
 const MOVE_SPEED = 500
@@ -62,11 +62,13 @@ func _physics_process(_delta):
 			$Node2D/Position2D.position = Vector2(18,0)
 			$Node2D/Sprite.position = Vector2(18,0)
 			$Node2D/Sprite.rotation_degrees = 0
+			$Area2D.rotation_degrees = 0
 		if Input.is_action_pressed("ui_left"):
 			move_dir -= 1
 			$Node2D/Position2D.position = Vector2(-20,0)
 			$Node2D/Sprite.position = Vector2(-20,0)
 			$Node2D/Sprite.rotation_degrees = 180
+			$Area2D.rotation_degrees = 180
 		if move_dir != 0:
 			motion += move_dir * ACC * _delta
 			motion = clamp(motion, -MOVE_SPEED, MOVE_SPEED)
@@ -106,6 +108,7 @@ func _physics_process(_delta):
 func die():
 	dead = true
 	Variables.deaths+=1
+	$DeathMusic.play()
 	get_node("MovementParticles").emitting = false
 	$"AnimationPlayer".play("death")
 	yield(get_tree().create_timer(0.2), "timeout")
@@ -131,6 +134,7 @@ func fire():
 	can_fire = true
 #	bullet.transform = $Sprite/Position2D.transform
 #	get_parent().add_child(bullet)
+	
 
 func change(level):
 	print(level)
@@ -148,3 +152,6 @@ func change_scene(level):
 	get_tree().change_scene("res://Scenes/Levels/Level" + str(level) + ".tscn")
 
 
+func _on_Area2D_area_entered(area):
+	if "Bullet" in area.name and Variables.powers[2]:
+		area.queue_free()

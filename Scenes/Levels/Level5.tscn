@@ -471,7 +471,7 @@ rotation = -1.5708
 scale = Vector2( 1.9, 1 )
 
 [node name="Area2D" parent="." instance=ExtResource( 6 )]
-position = Vector2( -474.675, -642.821 )
+position = Vector2( -458.884, -631.947 )
 
 [node name="WindowsPosition1" type="Position2D" parent="Area2D"]
 position = Vector2( 117.692, -75.7479 )

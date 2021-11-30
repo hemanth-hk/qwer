@@ -26,6 +26,7 @@ func die():
 	get_node("Area2D2").queue_free()
 	get_node("Area2D3").queue_free()
 	get_node("Area2D4").queue_free()
+	$DeathMusic.play()
 	var pickup = load("res://Scenes/Pickups/Pickup.tscn")
 	var scene_instance = pickup.instance()
 	$"AnimationPlayer".play("kill_windows")
