@@ -48,6 +48,7 @@ var NUMOFJUMPS = 2
 var facing_right = false
 var dead = false
 var can_fire = true
+onready var cuscur = load("res://Media/Cursor.png")
 
 func _physics_process(_delta):
 	if not Variables.powers[1]:
@@ -211,7 +212,9 @@ func _on_Area2D_body_entered(body):
 		var gunguy = Dialogic.start('gunguy')
 		add_child(gunguy)
 		gunguy.connect("timeline_end", self, "gunguyded")
-		change(3)
 		
 func gunguyded(name):
 	Variables.dialog_started = false
+	change(3)
+	$"../GunGuy".queue_free()
+	Input.set_custom_mouse_cursor(cuscur)
