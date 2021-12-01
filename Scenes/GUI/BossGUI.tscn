@@ -1,7 +1,7 @@
 [gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Media/Fonts/Minecraft.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Scripts/GUI/ProgressBar.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/gui/ProgressBar.gd" type="Script" id=2]
 [ext_resource path="res://Media/Player/Powers/Gun/Gun-Sheet.png" type="Texture" id=3]
 [ext_resource path="res://Media/Player/Powers/Triple Jump/TripleJump-Sheet.png" type="Texture" id=4]
 [ext_resource path="res://Media/Player/Powers/Reflect/Reflect-Sheet.png" type="Texture" id=5]
@@ -232,27 +232,28 @@ __meta__ = {
 position = Vector2( 1332.32, 39.7098 )
 scale = Vector2( 1.6, 1.6 )
 frames = SubResource( 13 )
+frame = 3
 playing = true
 
 [node name="tri" type="AnimatedSprite" parent="."]
 position = Vector2( 1381.01, 38.8855 )
 scale = Vector2( 1.6, 1.6 )
 frames = SubResource( 19 )
-frame = 4
+frame = 2
 playing = true
 
 [node name="gun" type="AnimatedSprite" parent="."]
 position = Vector2( 1441.83, 37.2802 )
 scale = Vector2( 1.6, 1.6 )
 frames = SubResource( 25 )
-frame = 3
+frame = 1
 playing = true
 
 [node name="ref" type="AnimatedSprite" parent="."]
 position = Vector2( 1504.06, 37.0524 )
 scale = Vector2( 1.6, 1.6 )
 frames = SubResource( 31 )
-frame = 3
+frame = 1
 playing = true
 
 [connection signal="timeout" from="ProgressBar/Timer" to="ProgressBar" method="_on_Timer_timeout"]

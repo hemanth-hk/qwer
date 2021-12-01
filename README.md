@@ -1,8 +1,4 @@
-![logo](./Media\Player\Base\Sprite-0003.png)
 # Optisus
-![logo](./Media\GameOff2021.png)
-
-
 
 ## Controls
 

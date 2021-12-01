@@ -50,13 +50,18 @@ _global_script_class_icons={
 
 [application]
 
-config/name="BugGame"
+config/name="Optisus"
 run/main_scene="res://Scenes/Inro/IntroScene.tscn"
-config/icon="res://icon.png"
+config/icon="res://Media/Player/Base/Sprite-0003.png"
 
 [autoload]
 
 Variables="*res://Scenes/Variables.tscn"
+
+[display]
+
+window/size/borderless=true
+window/size/fullscreen=true
 
 [editor_plugins]
 

@@ -53,7 +53,6 @@ func _on_Timer_timeout():
 		Variables.powers[arr1[2]] = true
 	if not Variables.dialog_started:
 		spawn()
-#	get_node("../bg/ProgressBar").decrease_value(2)
 	
 	if not Variables.dialog_started:
 		$Timer.start(4)
