@@ -198,3 +198,15 @@ func change_scene(level):
 func _on_Area2D_area_entered(area):
 	if "Bullet" in area.name and Variables.powers[2]:
 		area.queue_free()
+
+
+func _on_Area2D_body_entered(body):
+	if body.name == "Player":
+		Variables.dialog_started = true
+		var gunguy = Dialogic.start('gunguy')
+		add_child(gunguy)
+		gunguy.connect("timeline_end", self, "gunguyded")
+		change(3)
+		
+func gunguyded(name):
+	Variables.dialog_started = false

@@ -5,8 +5,16 @@ var pickup = preload("res://Scenes/Pickups/Pickup.tscn")
 var done = false
 
 
+func done_with_this(name):
+	Variables.dialog_started = false
+
 func _ready():
 	$"bg".play()
+	Variables.dialog_started = true
+	var new_dialog = Dialogic.start('destro')
+	add_child(new_dialog)
+	new_dialog.connect("timeline_end", self, "done_with_this")
+	
 
 
 func _process(delta):
