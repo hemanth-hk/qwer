@@ -37,10 +37,23 @@ func _ready():
 	$Timer.start(1)
 	
 func _on_Timer_timeout():
+	var val = get_node("../bg/ProgressBar/ProgressBar2").value
+	if val<66:
+		var arr1=[0,1,2]
+		arr1.shuffle()
+		Variables.powers[arr1[0]] = false
+		Variables.powers[arr1[1]] = true
+		Variables.powers[arr1[2]] = true
+	if val<33:
+		var arr1=[0,1,2]
+		arr1.shuffle()
+		Variables.powers[arr1[0]] = false
+		Variables.powers[arr1[1]] = false
+		Variables.powers[arr1[2]] = true
 	if not Variables.dialog_started:
 		spawn()
 #	get_node("../bg/ProgressBar").decrease_value(2)
-	$Timer.start(4)
+	$Timer.start(8)
 
 func _on_Area2D_body_entered(body):
 	if body.name == "Player":
@@ -50,13 +63,9 @@ func _on_Area2D_area_entered(area):
 	if area.name == "PlayerBullet":
 		get_node("../bg/ProgressBar").decrease_value(2)
 		area.queue_free()
-	if area.name == "Bullet":
+	elif area.name == "Bullet":
 		get_node("../bg/ProgressBar").decrease_value(5)
 		area.queue_free()
 	var val = get_node("../bg/ProgressBar/ProgressBar2").value
-	if val<66:
-		Variables.powers[0] = false
-	if val<33:
-		Variables.powers[2] = false
 	if val<=0:
 		get_tree().change_scene("res://Scenes/Story/end.tscn")	
