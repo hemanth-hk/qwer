@@ -5,8 +5,8 @@ var request = preload("res://Scenes/Enemies/Request.tscn")
 
 func spawn():
 	
-	var arr1 = [get_children()[5], get_children()[6]]
-	var arr2 = [get_children()[7], get_children()[8], get_children()[9]]
+	var arr1 = [get_children()[5], get_children()[6], get_children()[7], get_children()[8], get_children()[9]]
+	var arr2 = [get_children()[10], get_children()[11], get_children()[12], get_children()[13], get_children()[14]]
 	arr1.shuffle()
 	arr2.shuffle()
 	print(arr1,arr2)
@@ -23,10 +23,10 @@ func spawn():
 	var arr3 = [0,1,2,3,4]
 	arr3.shuffle()
 	
-	if arr3[0] == 0:
+	if arr3[0] == Variables.enemy_spawn[0]  or arr3[0] == Variables.enemy_spawn[1]:
 		$AnimatedSprite.play("windows")
 		get_tree().get_root().add_child(windows_defender_instance)
-	elif arr3[0] == 1:
+	elif arr3[0] == Variables.enemy_spawn[2] or arr3[0] == Variables.enemy_spawn[3]:
 		$AnimatedSprite.play("request")
 		get_tree().get_root().add_child(request_instance)
 	else:
@@ -37,7 +37,8 @@ func _ready():
 	$Timer.start(1)
 	
 func _on_Timer_timeout():
-	spawn()
+	if not Variables.dialog_started:
+		spawn()
 #	get_node("../bg/ProgressBar").decrease_value(2)
 	$Timer.start(4)
 
@@ -58,4 +59,4 @@ func _on_Area2D_area_entered(area):
 	if val<33:
 		Variables.powers[2] = false
 	if val<=0:
-		get_tree().change_scene("res://Scenes/Levels/Level5.tscn")	
+		get_tree().change_scene("res://Scenes/Story/end.tscn")	

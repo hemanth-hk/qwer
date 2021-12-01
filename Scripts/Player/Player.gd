@@ -55,7 +55,7 @@ func _physics_process(_delta):
 		
 	if not Variables.powers[2]:
 		$"Area2D".visible = false
-	if not dead:
+	if not dead and not Variables.dialog_started:
 		if Variables.powers[2] == true:
 			$"Sprite/AnimatedSprite".play("reflect")
 		elif Variables.powers[1] == true:

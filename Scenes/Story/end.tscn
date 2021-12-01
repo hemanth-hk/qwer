@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Media/Fonts/mine.tres" type="DynamicFont" id=1]
+
+[node name="MarginContainer" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+
+[node name="thanks" type="Label" parent="CenterContainer"]
+margin_left = 437.0
+margin_top = 278.0
+margin_right = 587.0
+margin_bottom = 321.0
+custom_fonts/font = ExtResource( 1 )
+text = "Thanks"

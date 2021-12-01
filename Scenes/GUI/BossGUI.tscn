@@ -1,7 +1,12 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Media/Fonts/Minecraft.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/GUI/ProgressBar.gd" type="Script" id=2]
+[ext_resource path="res://Media/Player/Powers/Gun/Gun-Sheet.png" type="Texture" id=3]
+[ext_resource path="res://Media/Player/Powers/Triple Jump/TripleJump-Sheet.png" type="Texture" id=4]
+[ext_resource path="res://Media/Player/Powers/Reflect/Reflect-Sheet.png" type="Texture" id=5]
+[ext_resource path="res://Media/Player/Powers/Starting Power/Player-Sheet.png" type="Texture" id=6]
+[ext_resource path="res://Scripts/gui/BossGUI.gd" type="Script" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 36
@@ -19,7 +24,127 @@ bg_color = Color( 0.87451, 0.772549, 0.0666667, 1 )
 [sub_resource type="StyleBoxFlat" id=5]
 bg_color = Color( 0.411765, 0.411765, 0.411765, 1 )
 
+[sub_resource type="DynamicFontData" id=6]
+font_path = "res://Media/Fonts/Minecraft.ttf"
+
+[sub_resource type="DynamicFont" id=7]
+size = 42
+font_data = SubResource( 6 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 6 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 6 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 6 )
+region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 6 )
+region = Rect2( 128, 0, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=13]
+animations = [ {
+"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 4 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 4 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 4 )
+region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 4 )
+region = Rect2( 128, 0, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=19]
+animations = [ {
+"frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 3 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 3 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 3 )
+region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 3 )
+region = Rect2( 128, 0, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=25]
+animations = [ {
+"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 5 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 5 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 5 )
+region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 5 )
+region = Rect2( 128, 0, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=31]
+animations = [ {
+"frames": [ SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
 [node name="bg" type="CanvasLayer"]
+script = ExtResource( 7 )
 
 [node name="MainContainer" type="Control" parent="."]
 margin_right = 1028.0
@@ -34,22 +159,23 @@ margin_top = 19.0
 margin_right = 269.0
 margin_bottom = 68.0
 custom_fonts/normal_font = SubResource( 1 )
-text = "Deaths : 0"
+text = "Deaths : "
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
-margin_left = 295.0
-margin_top = 23.0
-margin_right = 1234.0
-margin_bottom = 48.0
+margin_left = 193.862
+margin_top = 79.1571
+margin_right = 1132.86
+margin_bottom = 104.157
 custom_styles/fg = SubResource( 2 )
 custom_styles/bg = SubResource( 3 )
 value = 100.0
 percent_visible = false
 script = ExtResource( 2 )
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
@@ -68,5 +194,43 @@ __meta__ = {
 [node name="Timer" type="Timer" parent="ProgressBar"]
 wait_time = 0.2
 one_shot = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+margin_left = 1132.84
+margin_top = 19.9051
+margin_right = 2445.84
+margin_bottom = 56.9051
+custom_fonts/normal_font = SubResource( 7 )
+text = "Powers :"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="base" type="AnimatedSprite" parent="."]
+position = Vector2( 1332.32, 39.7098 )
+scale = Vector2( 1.6, 1.6 )
+frames = SubResource( 13 )
+playing = true
+
+[node name="tri" type="AnimatedSprite" parent="."]
+position = Vector2( 1381.01, 38.8855 )
+scale = Vector2( 1.6, 1.6 )
+frames = SubResource( 19 )
+frame = 4
+playing = true
+
+[node name="gun" type="AnimatedSprite" parent="."]
+position = Vector2( 1441.83, 37.2802 )
+scale = Vector2( 1.6, 1.6 )
+frames = SubResource( 25 )
+frame = 3
+playing = true
+
+[node name="ref" type="AnimatedSprite" parent="."]
+position = Vector2( 1504.06, 37.0524 )
+scale = Vector2( 1.6, 1.6 )
+frames = SubResource( 31 )
+frame = 3
+playing = true
 
 [connection signal="timeout" from="ProgressBar/Timer" to="ProgressBar" method="_on_Timer_timeout"]
