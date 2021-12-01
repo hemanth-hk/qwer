@@ -5,4 +5,5 @@ func _on_Area2D_body_entered(body):
 		$AnimationPlayer.play("rotate")
 
 func _on_Area2D_area_entered(area):
-	get_child(1).queue_free()
+	if area.name == "PlayerBullet":
+		get_child(1).queue_free()
