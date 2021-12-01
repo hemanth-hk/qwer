@@ -14,6 +14,8 @@ extends Node2D
 #func _process(delta):
 #	pass
 
+func _ready():
+	$"bgm".play()
 
 func _on_diaArea_body_entered(body):
 	print(body.name)
@@ -25,4 +27,4 @@ func _on_diaArea_body_entered(body):
 		
 		
 func end(timeline_name):
-	get_tree().change_scene("res://Scenes/GUI/title.tscn")
+	get_tree().change_scene("res://Scenes/Story/hkgames.tscn")

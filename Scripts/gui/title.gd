@@ -32,6 +32,7 @@ func _process(delta):
 
 	if Input.is_action_just_pressed("ui_accept"):
 		if current_idx  == 0:
+			Variables.optisus.stop()
 			get_tree().change_scene("res://Scenes/Levels/defender.tscn")
 		elif current_idx == 1:
 			get_tree().change_scene("res://Scenes/GUI/Rules.tscn")

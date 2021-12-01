@@ -1,8 +1,24 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Media/Proto/white.png" type="Texture" id=1]
-[ext_resource path="res://Media/Dialogues/SnowStuff/Snowflake.png" type="Texture" id=2]
+[ext_resource path="res://Media/Fonts/mine.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Scripts/Intro/IntroScene.gd" type="Script" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "twinkle"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("HBoxContainer/VBoxContainer/Label:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, false, true ]
+}
 
 [node name="IntroScene" type="Control"]
 anchor_right = 1.0
@@ -35,13 +51,18 @@ __meta__ = {
 }
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
-margin_left = 318.0
-margin_right = 708.0
+margin_left = 513.0
+margin_right = 513.0
 margin_bottom = 599.0
 alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer"]
-margin_top = 104.0
-margin_right = 390.0
-margin_bottom = 494.0
-texture = ExtResource( 2 )
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
+visible = false
+margin_top = 278.0
+margin_right = 474.0
+margin_bottom = 321.0
+custom_fonts/font = ExtResource( 2 )
+text = "Play in FullScreen Mode"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/twinkle = SubResource( 1 )
