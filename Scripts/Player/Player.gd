@@ -141,19 +141,20 @@ func die():
 	yield(get_tree().create_timer(0.2), "timeout")
 	get_node("DeathParticles").emitting = true
 	yield(get_tree().create_timer(1), "timeout")
-#	if Variables.current_scene == 1:
-#		get_tree().change_scene("res://Scenes/Levels/defender.tscn")
-#	if Variables.current_scene == 2 or Variables.current_scene == 4:
-#		get_tree().change_scene("res://Scenes/Levels/github.tscn")
-#	if Variables.current_scene == 3:
-#		get_tree().change_scene("res://Scenes/Levels/reddit.tscn")
+	if Variables.current_scene == 1:
+		get_tree().change_scene("res://Scenes/Levels/defender.tscn")
+	if Variables.current_scene == 2 or Variables.current_scene == 4:
+		get_tree().change_scene("res://Scenes/Levels/github.tscn")
+	if Variables.current_scene == 3:
+		get_tree().change_scene("res://Scenes/Levels/reddit.tscn")
 	if Variables.current_scene == 5:
-		for x in get_children():
+		print(get_tree().get_root().get_children())
+		for x in get_tree().get_root().get_children():
 			if "Bullet" in x.name or "Windows" in x.name or "Request" in x.name:
 				x.queue_free()
 		Variables.powers = [true,true,true]
-#		get_tree().change_scene("res://Scenes/Levels/stackoverflow.tscn")
-	get_tree().reload_current_scene()  
+		get_tree().change_scene("res://Scenes/Levels/stackoverflow.tscn")
+#	get_tree().reload_current_scene()  
 #	$"Sprite/AnimatedSprite".play("default")
 
 func _on_WindowsDefender_die():
@@ -208,13 +209,18 @@ func _on_Area2D_area_entered(area):
 
 func _on_Area2D_body_entered(body):
 	if body.name == "Player":
-		Variables.dialog_started = true
-		var gunguy = Dialogic.start('gunguy')
-		add_child(gunguy)
-		gunguy.connect("timeline_end", self, "gunguyded")
+		if not Variables.level3_done:
+			Variables.dialog_started = true
+			var gunguy = Dialogic.start('gunguy')
+			add_child(gunguy)
+			gunguy.connect("timeline_end", self, "gunguyded")
+		else:
+			$"../GunGuy".queue_free()
+		change(3)
 		
 func gunguyded(name):
 	Variables.dialog_started = false
 	change(3)
 	$"../GunGuy".queue_free()
+	Variables.level3_done = true
 	Input.set_custom_mouse_cursor(cuscur)
