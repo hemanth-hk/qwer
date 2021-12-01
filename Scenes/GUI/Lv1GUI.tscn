@@ -1,124 +1,130 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Media/Fonts/Minecraft.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Scripts/gui/Lv1GUI.gd" type="Script" id=2]
 [ext_resource path="res://Media/Player/Powers/Starting Power/Player-Sheet.png" type="Texture" id=3]
 [ext_resource path="res://Media/Player/Powers/Triple Jump/TripleJump-Sheet.png" type="Texture" id=4]
-[ext_resource path="res://Media/Fonts/mine.tres" type="DynamicFont" id=5]
 [ext_resource path="res://Media/Player/Powers/Gun/Gun-Sheet.png" type="Texture" id=6]
 [ext_resource path="res://Media/Player/Powers/Reflect/Reflect-Sheet.png" type="Texture" id=7]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 size = 36
 font_data = ExtResource( 1 )
 
-[sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 3 )
-region = Rect2( 0, 0, 32, 32 )
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Media/Fonts/Minecraft.ttf"
 
-[sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 3 )
-region = Rect2( 32, 0, 32, 32 )
+[sub_resource type="DynamicFont" id=3]
+size = 42
+font_data = SubResource( 1 )
 
 [sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 3 )
-region = Rect2( 64, 0, 32, 32 )
+region = Rect2( 0, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 3 )
-region = Rect2( 96, 0, 32, 32 )
+region = Rect2( 32, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 3 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 3 )
+region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 3 )
 region = Rect2( 128, 0, 32, 32 )
 
-[sub_resource type="SpriteFrames" id=7]
+[sub_resource type="SpriteFrames" id=9]
 animations = [ {
-"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
 "name": "default",
 "speed": 10.0
 } ]
-
-[sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 4 )
-region = Rect2( 0, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 4 )
-region = Rect2( 32, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 4 )
-region = Rect2( 64, 0, 32, 32 )
+region = Rect2( 0, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 4 )
-region = Rect2( 96, 0, 32, 32 )
+region = Rect2( 32, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 4 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 4 )
+region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 4 )
 region = Rect2( 128, 0, 32, 32 )
 
-[sub_resource type="SpriteFrames" id=13]
+[sub_resource type="SpriteFrames" id=15]
 animations = [ {
-"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
+"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
 "loop": true,
 "name": "default",
 "speed": 10.0
 } ]
-
-[sub_resource type="AtlasTexture" id=14]
-atlas = ExtResource( 6 )
-region = Rect2( 0, 0, 32, 32 )
-
-[sub_resource type="AtlasTexture" id=15]
-atlas = ExtResource( 6 )
-region = Rect2( 32, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 6 )
-region = Rect2( 64, 0, 32, 32 )
+region = Rect2( 0, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 6 )
-region = Rect2( 96, 0, 32, 32 )
+region = Rect2( 32, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 6 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 6 )
+region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 6 )
 region = Rect2( 128, 0, 32, 32 )
 
-[sub_resource type="SpriteFrames" id=19]
+[sub_resource type="SpriteFrames" id=21]
 animations = [ {
-"frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ) ],
+"frames": [ SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
 "loop": true,
 "name": "default",
 "speed": 10.0
 } ]
 
-[sub_resource type="AtlasTexture" id=20]
+[sub_resource type="AtlasTexture" id=22]
 atlas = ExtResource( 7 )
 region = Rect2( 0, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=23]
 atlas = ExtResource( 7 )
 region = Rect2( 32, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=22]
+[sub_resource type="AtlasTexture" id=24]
 atlas = ExtResource( 7 )
 region = Rect2( 64, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=23]
+[sub_resource type="AtlasTexture" id=25]
 atlas = ExtResource( 7 )
 region = Rect2( 96, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=24]
+[sub_resource type="AtlasTexture" id=26]
 atlas = ExtResource( 7 )
 region = Rect2( 128, 0, 32, 32 )
 
-[sub_resource type="SpriteFrames" id=25]
+[sub_resource type="SpriteFrames" id=27]
 animations = [ {
-"frames": [ SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
+"frames": [ SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ) ],
 "loop": true,
 "name": "default",
 "speed": 10.0
@@ -142,7 +148,7 @@ margin_left = 23.0
 margin_top = 19.0
 margin_right = 269.0
 margin_bottom = 68.0
-custom_fonts/normal_font = SubResource( 1 )
+custom_fonts/normal_font = SubResource( 2 )
 text = "Deaths : "
 __meta__ = {
 "_edit_use_anchors_": false,
@@ -152,9 +158,9 @@ __meta__ = {
 [node name="RichTextLabel2" type="RichTextLabel" parent="MainContainer"]
 margin_left = 1043.0
 margin_top = 23.0
-margin_right = 1458.0
+margin_right = 2356.0
 margin_bottom = 60.0
-custom_fonts/normal_font = ExtResource( 5 )
+custom_fonts/normal_font = SubResource( 3 )
 text = "Powers :"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -163,25 +169,25 @@ __meta__ = {
 [node name="base" type="AnimatedSprite" parent="MainContainer"]
 position = Vector2( 1242.48, 42.8047 )
 scale = Vector2( 1.6, 1.6 )
-frames = SubResource( 7 )
+frames = SubResource( 9 )
 frame = 2
 playing = true
 
 [node name="tri" type="AnimatedSprite" parent="MainContainer"]
 position = Vector2( 1291.17, 41.9804 )
 scale = Vector2( 1.6, 1.6 )
-frames = SubResource( 13 )
+frames = SubResource( 15 )
 frame = 1
 playing = true
 
 [node name="gun" type="AnimatedSprite" parent="MainContainer"]
 position = Vector2( 1351.99, 40.3751 )
 scale = Vector2( 1.6, 1.6 )
-frames = SubResource( 19 )
+frames = SubResource( 21 )
 playing = true
 
 [node name="ref" type="AnimatedSprite" parent="MainContainer"]
 position = Vector2( 1414.22, 40.1473 )
 scale = Vector2( 1.6, 1.6 )
-frames = SubResource( 25 )
+frames = SubResource( 27 )
 playing = true

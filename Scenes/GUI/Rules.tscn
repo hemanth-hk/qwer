@@ -1,8 +1,499 @@
-[gd_scene format=2]
+[gd_scene load_steps=55 format=2]
+
+[ext_resource path="res://Media/Fonts/mine.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Media/Player/Powers/Starting Power/Player-Sheet.png" type="Texture" id=2]
+[ext_resource path="res://Media/Player/Powers/Triple Jump/TripleJump-Sheet.png" type="Texture" id=3]
+[ext_resource path="res://Media/Player/Powers/Gun/Gun-Sheet.png" type="Texture" id=4]
+[ext_resource path="res://Media/Player/Powers/Reflect/Reflect-Sheet.png" type="Texture" id=5]
+[ext_resource path="res://Media/Enemies/WindowsDefender/WindowsDefender-Sheet.png" type="Texture" id=6]
+[ext_resource path="res://Media/Enemies/Request/Request-Sheet.png" type="Texture" id=7]
+[ext_resource path="res://Scripts/gui/Rules.gd" type="Script" id=8]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Media/Fonts/Minecraft.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 28
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 28
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 28
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 28
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 28
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 28
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 28
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 28
+font_data = SubResource( 1 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 2 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 2 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 2 )
+region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 2 )
+region = Rect2( 128, 0, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=14]
+animations = [ {
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="DynamicFont" id=16]
+size = 42
+font_data = SubResource( 1 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 3 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 3 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 3 )
+region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 3 )
+region = Rect2( 128, 0, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=22]
+animations = [ {
+"frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 4 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 4 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 4 )
+region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 4 )
+region = Rect2( 128, 0, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=28]
+animations = [ {
+"frames": [ SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 5 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 5 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 5 )
+region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 5 )
+region = Rect2( 128, 0, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=34]
+animations = [ {
+"frames": [ SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 6 )
+region = Rect2( 32, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 6 )
+region = Rect2( 64, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 6 )
+region = Rect2( 96, 0, 32, 32 )
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 6 )
+region = Rect2( 128, 0, 32, 32 )
+
+[sub_resource type="SpriteFrames" id=40]
+animations = [ {
+"frames": [ SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=42]
+atlas = ExtResource( 7 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=43]
+atlas = ExtResource( 7 )
+region = Rect2( 32, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=44]
+atlas = ExtResource( 7 )
+region = Rect2( 48, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=45]
+atlas = ExtResource( 7 )
+region = Rect2( 64, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=46]
+animations = [ {
+"frames": [ SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
 
 [node name="MarginContainer" type="MarginContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer"]
+margin_right = 1024.0
+margin_bottom = 600.0
+columns = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/GridContainer"]
+margin_right = 25.0
+margin_bottom = 600.0
+
+[node name="margin" type="Label" parent="MarginContainer/GridContainer/MarginContainer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_top = 293.0
+margin_right = 25.0
+margin_bottom = 307.0
+text = "mar"
+
+[node name="SideContainer" type="MarginContainer" parent="MarginContainer/GridContainer"]
+margin_left = 29.0
+margin_right = 278.0
+margin_bottom = 600.0
+size_flags_vertical = 3
+
+[node name="leftBar" type="VBoxContainer" parent="MarginContainer/GridContainer/SideContainer"]
+margin_right = 249.0
+margin_bottom = 600.0
+alignment = 1
+
+[node name="move" type="Label" parent="MarginContainer/GridContainer/SideContainer/leftBar"]
+margin_top = 174.0
+margin_right = 249.0
+margin_bottom = 202.0
+custom_fonts/font = SubResource( 2 )
+text = "Movement"
+align = 1
+valign = 1
+
+[node name="allow" type="Label" parent="MarginContainer/GridContainer/SideContainer/leftBar"]
+margin_top = 206.0
+margin_right = 249.0
+margin_bottom = 234.0
+custom_fonts/font = SubResource( 3 )
+text = "Allow Prompt"
+align = 1
+valign = 1
+
+[node name="extra" type="Label" parent="MarginContainer/GridContainer/SideContainer/leftBar"]
+margin_top = 238.0
+margin_right = 249.0
+margin_bottom = 266.0
+custom_fonts/font = SubResource( 4 )
+text = "Extra Hit"
+align = 1
+valign = 1
+
+[node name="gun" type="Label" parent="MarginContainer/GridContainer/SideContainer/leftBar"]
+margin_top = 270.0
+margin_right = 249.0
+margin_bottom = 298.0
+custom_fonts/font = SubResource( 5 )
+text = "Network Nullifier"
+align = 1
+valign = 1
+
+[node name="ip" type="Label" parent="MarginContainer/GridContainer/SideContainer/leftBar"]
+margin_top = 302.0
+margin_right = 249.0
+margin_bottom = 330.0
+custom_fonts/font = SubResource( 6 )
+text = "Protect IP"
+align = 1
+valign = 1
+
+[node name="windows" type="Label" parent="MarginContainer/GridContainer/SideContainer/leftBar"]
+margin_top = 334.0
+margin_right = 249.0
+margin_bottom = 362.0
+custom_fonts/font = SubResource( 7 )
+text = "Windows Defender"
+align = 1
+valign = 1
+
+[node name="network" type="Label" parent="MarginContainer/GridContainer/SideContainer/leftBar"]
+margin_top = 366.0
+margin_right = 249.0
+margin_bottom = 394.0
+custom_fonts/font = SubResource( 8 )
+text = "Request Handler"
+align = 1
+valign = 1
+
+[node name="exit" type="Label" parent="MarginContainer/GridContainer/SideContainer/leftBar"]
+margin_top = 398.0
+margin_right = 249.0
+margin_bottom = 426.0
+custom_fonts/font = SubResource( 15 )
+text = "Exit"
+align = 1
+valign = 1
+
+[node name="MainContainer" type="MarginContainer" parent="MarginContainer/GridContainer"]
+margin_left = 282.0
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/GridContainer/MainContainer"]
+margin_right = 742.0
+margin_bottom = 600.0
+
+[node name="mainScreen" type="VBoxContainer" parent="MarginContainer/GridContainer/MainContainer/CenterContainer"]
+margin_left = 110.0
+margin_top = 163.0
+margin_right = 631.0
+margin_bottom = 436.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+
+[node name="movetag" type="Label" parent="MarginContainer/GridContainer/MainContainer/CenterContainer/mainScreen"]
+margin_right = 521.0
+margin_bottom = 273.0
+custom_fonts/font = ExtResource( 1 )
+text = "W S A D or Arrow Keys
+to Move and Jump.
+
+Press W or Up key mid air
+ for multiple jumps.
+"
+align = 1
+valign = 1
+
+[node name="allowtag" type="Label" parent="MarginContainer/GridContainer/MainContainer/CenterContainer/mainScreen"]
+visible = false
+margin_right = 455.0
+margin_bottom = 227.0
+custom_fonts/font = ExtResource( 1 )
+text = "The basic attack that
+ every virus has.
+
+Jump on the head
+of the enemy to use it."
+align = 1
+valign = 1
+
+[node name="allowimg" type="AnimatedSprite" parent="MarginContainer/GridContainer/MainContainer/CenterContainer/mainScreen"]
+visible = false
+position = Vector2( 224.74, -80.8 )
+scale = Vector2( 3.3, 3.8 )
+frames = SubResource( 14 )
+frame = 1
+playing = true
+
+[node name="extratag" type="Label" parent="MarginContainer/GridContainer/MainContainer/CenterContainer/mainScreen"]
+visible = false
+margin_right = 519.0
+margin_bottom = 181.0
+custom_fonts/font = SubResource( 16 )
+text = "Upon obtaining this ability
+player will be able to
+ jump 3 times
+instead of 2"
+align = 1
+valign = 1
+
+[node name="extraimg" type="AnimatedSprite" parent="MarginContainer/GridContainer/MainContainer/CenterContainer/mainScreen"]
+visible = false
+position = Vector2( 247.914, -93.5895 )
+scale = Vector2( 3.3, 3.8 )
+frames = SubResource( 22 )
+frame = 4
+playing = true
+
+[node name="guntag" type="Label" parent="MarginContainer/GridContainer/MainContainer/CenterContainer/mainScreen"]
+visible = false
+margin_right = 545.0
+margin_bottom = 181.0
+custom_fonts/font = ExtResource( 1 )
+text = "Upon obtaining this ability
+player will be able to
+ shoot requests that will
+ nullify the request handler"
+align = 1
+valign = 1
+
+[node name="gunimg" type="AnimatedSprite" parent="MarginContainer/GridContainer/MainContainer/CenterContainer/mainScreen"]
+visible = false
+position = Vector2( 277.54, -89.135 )
+scale = Vector2( 3.3, 3.8 )
+frames = SubResource( 28 )
+frame = 4
+playing = true
+
+[node name="iptag" type="Label" parent="MarginContainer/GridContainer/MainContainer/CenterContainer/mainScreen"]
+visible = false
+margin_right = 543.0
+margin_bottom = 181.0
+custom_fonts/font = ExtResource( 1 )
+text = "Upon obtaining this ability
+player will activate a shield
+that will protect his/her
+ IP from requests"
+align = 1
+valign = 1
+
+[node name="ipimg" type="AnimatedSprite" parent="MarginContainer/GridContainer/MainContainer/CenterContainer/mainScreen"]
+visible = false
+position = Vector2( 277.54, -95.4093 )
+scale = Vector2( 3.3, 3.8 )
+frames = SubResource( 34 )
+playing = true
+
+[node name="windowstag" type="Label" parent="MarginContainer/GridContainer/MainContainer/CenterContainer/mainScreen"]
+visible = false
+margin_right = 477.0
+margin_bottom = 227.0
+custom_fonts/font = ExtResource( 1 )
+text = "It is the anti-malware
+component of Windows.
+
+Use Allow prompt
+on it's head to kill it"
+align = 1
+valign = 1
+
+[node name="windowsimg" type="AnimatedSprite" parent="MarginContainer/GridContainer/MainContainer/CenterContainer/mainScreen"]
+visible = false
+position = Vector2( 224.74, -94.3043 )
+scale = Vector2( 3, 3 )
+frames = SubResource( 40 )
+frame = 1
+playing = true
+
+[node name="networktag" type="Label" parent="MarginContainer/GridContainer/MainContainer/CenterContainer/mainScreen"]
+visible = false
+margin_right = 471.0
+margin_bottom = 227.0
+custom_fonts/font = ExtResource( 1 )
+text = "The main source of
+ information exchange
+ with APIs.
+Use a network nullifier
+ to kill it."
+align = 1
+valign = 1
+
+[node name="networkimg" type="AnimatedSprite" parent="MarginContainer/GridContainer/MainContainer/CenterContainer/mainScreen"]
+visible = false
+position = Vector2( 224.74, -69.7944 )
+scale = Vector2( 3.3, 3.8 )
+frames = SubResource( 46 )
+frame = 3
+playing = true
+
+[node name="arive" type="Label" parent="MarginContainer/GridContainer/MainContainer/CenterContainer/mainScreen"]
+visible = false
+margin_right = 232.0
+margin_bottom = 43.0
+custom_fonts/font = ExtResource( 1 )
+text = "Arrivederci"
+align = 1
+valign = 1
