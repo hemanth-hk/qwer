@@ -47,7 +47,7 @@ var y_velo = 0
 var NUMOFJUMPS = 2
 var facing_right = false
 var dead = false
-var can_fire = false
+var can_fire = true
 
 func _physics_process(_delta):
 	if not Variables.powers[1]:
@@ -135,7 +135,7 @@ func die():
 		$"../bg".stop()
 		Variables.powers[2] = false
 	if Variables.current_scene == 5:
-		$"../bg".stop()
+		$"../bgmusic".stop()
 	
 	yield(get_tree().create_timer(0.2), "timeout")
 	get_node("DeathParticles").emitting = true
@@ -157,7 +157,7 @@ func fire():
 	var bullet_scene = load("res://Scenes/Hazards/PlayerBullet.tscn")
 	var bullet = bullet_scene.instance()
 	print(get_viewport().get_mouse_position().angle_to_point(position))
-	print(position)
+	print(bullet)
 #	bullet.direction = ($Node2D/Position2D.global_position-global_position).normalized()
 	bullet.global_position = $Node2D/Position2D.global_position
 	bullet.rotation_degrees = self.rotation_degrees
