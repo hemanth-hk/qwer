@@ -4,7 +4,7 @@
 [ext_resource path="res://Scripts/Hazards/Wall.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 6.96817, 15.6568 )
+extents = Vector2( 6.97774, 15.6568 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "destroy"
@@ -35,6 +35,8 @@ visible = false
 shape = SubResource( 1 )
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 95
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
 visible = false

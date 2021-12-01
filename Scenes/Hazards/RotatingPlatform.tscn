@@ -53,7 +53,7 @@ shape = SubResource( 1 )
 [node name="Wall" type="StaticBody2D" parent="."]
 position = Vector2( -20.5229, 0.420448 )
 collision_layer = 8
-collision_mask = 7
+collision_mask = 103
 
 [node name="Sprite" type="Sprite" parent="Wall"]
 position = Vector2( 46.4782, -1.45576 )
@@ -67,6 +67,8 @@ position = Vector2( 44.7816, -3.8147e-06 )
 shape = SubResource( 2 )
 
 [node name="Area2D" type="Area2D" parent="Wall"]
+collision_layer = 8
+collision_mask = 119
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wall/Area2D"]
 visible = false
