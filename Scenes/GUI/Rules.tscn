@@ -40,33 +40,33 @@ font_data = SubResource( 1 )
 size = 28
 font_data = SubResource( 1 )
 
-[sub_resource type="DynamicFont" id=15]
+[sub_resource type="DynamicFont" id=9]
 size = 28
 font_data = SubResource( 1 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 2 )
 region = Rect2( 32, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=11]
+[sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 2 )
 region = Rect2( 64, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=12]
+[sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 2 )
 region = Rect2( 96, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 2 )
 region = Rect2( 128, 0, 32, 32 )
 
-[sub_resource type="SpriteFrames" id=14]
+[sub_resource type="SpriteFrames" id=15]
 animations = [ {
-"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
+"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
 "loop": true,
 "name": "default",
 "speed": 10.0
@@ -329,7 +329,7 @@ valign = 1
 margin_top = 398.0
 margin_right = 249.0
 margin_bottom = 426.0
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 9 )
 text = "Exit"
 align = 1
 valign = 1
@@ -384,8 +384,8 @@ valign = 1
 visible = false
 position = Vector2( 224.74, -80.8 )
 scale = Vector2( 3.3, 3.8 )
-frames = SubResource( 14 )
-frame = 1
+frames = SubResource( 15 )
+frame = 3
 playing = true
 
 [node name="extratag" type="Label" parent="MarginContainer/GridContainer/MainContainer/CenterContainer/mainScreen"]
@@ -405,7 +405,7 @@ visible = false
 position = Vector2( 247.914, -93.5895 )
 scale = Vector2( 3.3, 3.8 )
 frames = SubResource( 22 )
-frame = 4
+frame = 1
 playing = true
 
 [node name="guntag" type="Label" parent="MarginContainer/GridContainer/MainContainer/CenterContainer/mainScreen"]
@@ -425,7 +425,7 @@ visible = false
 position = Vector2( 277.54, -89.135 )
 scale = Vector2( 3.3, 3.8 )
 frames = SubResource( 28 )
-frame = 4
+frame = 1
 playing = true
 
 [node name="iptag" type="Label" parent="MarginContainer/GridContainer/MainContainer/CenterContainer/mainScreen"]
@@ -445,6 +445,7 @@ visible = false
 position = Vector2( 277.54, -95.4093 )
 scale = Vector2( 3.3, 3.8 )
 frames = SubResource( 34 )
+frame = 2
 playing = true
 
 [node name="windowstag" type="Label" parent="MarginContainer/GridContainer/MainContainer/CenterContainer/mainScreen"]
@@ -465,7 +466,7 @@ visible = false
 position = Vector2( 224.74, -94.3043 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 40 )
-frame = 1
+frame = 3
 playing = true
 
 [node name="networktag" type="Label" parent="MarginContainer/GridContainer/MainContainer/CenterContainer/mainScreen"]
@@ -486,7 +487,6 @@ visible = false
 position = Vector2( 224.74, -69.7944 )
 scale = Vector2( 3.3, 3.8 )
 frames = SubResource( 46 )
-frame = 3
 playing = true
 
 [node name="arive" type="Label" parent="MarginContainer/GridContainer/MainContainer/CenterContainer/mainScreen"]

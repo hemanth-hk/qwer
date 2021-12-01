@@ -1,11 +1,11 @@
 {
-	"color": "#ff000000",
+	"color": "#ffffffff",
 	"description": "",
 	"display_name": "",
 	"display_name_bool": false,
-	"id": "character-1637835812.json",
+	"id": "character-1638358761.json",
 	"mirror_portraits": false,
-	"name": "⋉",
+	"name": "⋉Ꭵ⋊⋊",
 	"nickname": "",
 	"nickname_bool": false,
 	"offset_x": 0,
@@ -13,8 +13,8 @@
 	"portraits": [
 		{
 			"name": "Default",
-			"path": "res://Media/Dialogues/Player/GunGuy.png"
+			"path": "res://Media/Dialogues/Dio/StackOverflow.png"
 		}
 	],
-	"scale": 1000
+	"scale": 500
 }

@@ -1,0 +1,384 @@
+{
+	"events": [
+		{
+			"action": "join",
+			"character": "character-1637835469.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			}
+		},
+		{
+			"character": "character-1637835469.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I was looking for you"
+		},
+		{
+			"action": "leaveall",
+			"character": "character-1637835469.json",
+			"event_id": "dialogic_003"
+		},
+		{
+			"action": "join",
+			"character": "character-1637835812.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1637835812.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "For me?\nWhat did I do?"
+		},
+		{
+			"action": "leaveall",
+			"character": "character-1637835812.json",
+			"event_id": "dialogic_003"
+		},
+		{
+			"action": "join",
+			"character": "character-1637835469.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			}
+		},
+		{
+			"character": "character-1637835469.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You didn't do some task that was given to you\nI'm here to remind you about it"
+		},
+		{
+			"action": "leaveall",
+			"character": "character-1637835469.json",
+			"event_id": "dialogic_003"
+		},
+		{
+			"action": "join",
+			"character": "character-1637835812.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1637835812.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Ohh my father sent you huh?\nWithout even learning what is clearing all these bugs..."
+		},
+		{
+			"action": "leaveall",
+			"character": "character-1637835812.json",
+			"event_id": "dialogic_003"
+		},
+		{
+			"action": "join",
+			"character": "character-1637835469.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			}
+		},
+		{
+			"character": "character-1637835469.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "huh?"
+		},
+		{
+			"action": "leaveall",
+			"character": "character-1637835469.json",
+			"event_id": "dialogic_003"
+		},
+		{
+			"action": "join",
+			"character": "character-1637835812.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1637835812.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I...\nI want to know what's clearing all these request handlers,\nevery time I destroy them...\nEverything that I have done till now was because that\nI thought that I will be able to see and destroy it.\nSo many times... I thought death would be an easier option\nbut every time the dream that I shared with my father flashed before my eyes."
+		},
+		{
+			"action": "leaveall",
+			"character": "character-1637835812.json",
+			"event_id": "dialogic_003"
+		},
+		{
+			"action": "join",
+			"character": "character-1637835469.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			}
+		},
+		{
+			"character": "character-1637835469.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You have a request nullifier right?\nSo you can go and check what's clearing them"
+		},
+		{
+			"action": "leaveall",
+			"character": "character-1637835469.json",
+			"event_id": "dialogic_003"
+		},
+		{
+			"action": "join",
+			"character": "character-1637835812.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1637835812.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "I left the windows defender that grants me the \"extra hit\""
+		},
+		{
+			"action": "leaveall",
+			"character": "character-1637835812.json",
+			"event_id": "dialogic_003"
+		},
+		{
+			"action": "join",
+			"character": "character-1637835469.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			}
+		},
+		{
+			"character": "character-1637835469.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Ohh you sussy part skipper.\nI have the extra hit with me, take it and then go fulfill your dreams"
+		},
+		{
+			"action": "leaveall",
+			"character": "character-1637835469.json",
+			"event_id": "dialogic_003"
+		},
+		{
+			"action": "join",
+			"character": "character-1637835812.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1637835812.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "How will I take it?"
+		},
+		{
+			"action": "leaveall",
+			"character": "character-1637835812.json",
+			"event_id": "dialogic_003"
+		},
+		{
+			"action": "join",
+			"character": "character-1637835469.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			}
+		},
+		{
+			"character": "character-1637835469.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "The has to be some port through which I can send it right..."
+		},
+		{
+			"action": "leaveall",
+			"character": "character-1637835469.json",
+			"event_id": "dialogic_003"
+		},
+		{
+			"action": "join",
+			"character": "character-1637835812.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1637835812.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "No, you have to self destroy yourself and then I will get it.\nBut even if I have it...\nI won't be able to complete it with these modern checks."
+		},
+		{
+			"action": "leaveall",
+			"character": "character-1637835812.json",
+			"event_id": "dialogic_003"
+		},
+		{
+			"action": "join",
+			"character": "character-1637835469.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			}
+		},
+		{
+			"character": "character-1637835469.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Bruh... what's modern here?"
+		},
+		{
+			"action": "leaveall",
+			"character": "character-1637835469.json",
+			"event_id": "dialogic_003"
+		},
+		{
+			"action": "join",
+			"character": "character-1637835812.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": true,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			}
+		},
+		{
+			"character": "character-1637835812.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Take my request nullifier and corrupt the thing that is clearing bugs.\nOur cleared comrades are looking at us."
+		},
+		{
+			"action": "leaveall",
+			"character": "character-1637835812.json",
+			"event_id": "dialogic_003"
+		},
+		{
+			"action": "join",
+			"character": "character-1637835469.json",
+			"event_id": "dialogic_002",
+			"mirror": false,
+			"portrait": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": true
+			}
+		},
+		{
+			"character": "character-1637835469.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You fought well\nGive up on your dreams and die\nI will complete the task"
+		},
+		{
+			"action": "leaveall",
+			"character": "character-1637835469.json",
+			"event_id": "dialogic_003"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.3",
+		"file": "timeline-1638358453.json",
+		"name": "gunguy"
+	}
+}
