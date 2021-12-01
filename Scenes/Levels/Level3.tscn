@@ -541,7 +541,8 @@ scale = Vector2( 2.6, 2.6 )
 stream = ExtResource( 15 )
 
 [node name="GunGuy" type="Sprite" parent="."]
-position = Vector2( -563.969, 80.4255 )
+position = Vector2( -567.686, 84.319 )
+scale = Vector2( 0.767716, 0.756657 )
 texture = ExtResource( 13 )
 
 [node name="Area2D" type="Area2D" parent="GunGuy"]
