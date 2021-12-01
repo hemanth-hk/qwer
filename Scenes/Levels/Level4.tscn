@@ -456,7 +456,7 @@ position = Vector2( -597.498, -648.048 )
 scale = Vector2( 1.5, 3.6 )
 
 [node name="Node2D" type="Node2D" parent="."]
-position = Vector2( -229.576, -679.474 )
+position = Vector2( -242.393, -522.322 )
 __meta__ = {
 "_edit_group_": true
 }
