@@ -62,23 +62,25 @@ script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 6 )
-frame = 2
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( -0.178661, -0.57882 )
 scale = Vector2( 1e-05, 1e-05 )
 shape = SubResource( 7 )
 
 [node name="Area2D" type="Area2D" parent="."]
+visible = false
 collision_layer = 2
 collision_mask = 29
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
-visible = false
 polygon = PoolVector2Array( -14.625, -15, 14.2681, -14.8913, 9.77322, -10.1155, -9.79842, -10.2091 )
 
 [node name="Area2D2" type="Area2D" parent="."]
+visible = false
 collision_layer = 2
 collision_mask = 29
 __meta__ = {
@@ -86,11 +88,11 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
-visible = false
 position = Vector2( -13.7655, 0.917702 )
 shape = SubResource( 8 )
 
 [node name="Area2D3" type="Area2D" parent="."]
+visible = false
 position = Vector2( 1, 26.625 )
 rotation = 1.5708
 collision_layer = 2
@@ -100,11 +102,11 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3"]
-visible = false
 position = Vector2( -13.7655, 0.917702 )
 shape = SubResource( 8 )
 
 [node name="Area2D4" type="Area2D" parent="."]
+visible = false
 position = Vector2( 27.625, 0.0625 )
 collision_layer = 2
 collision_mask = 29
@@ -113,7 +115,6 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4"]
-visible = false
 position = Vector2( -13.7655, 0.917702 )
 shape = SubResource( 8 )
 

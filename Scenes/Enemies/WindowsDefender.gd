@@ -11,28 +11,26 @@ func _physics_process(delta):
 
 func _on_Area2D2_body_entered(body):
 	if body.name == "Player":
-		emit_signal("die")
+		body.die()
 
 
 func _on_Area2D3_body_entered(body):
 	if body.name == "Player":
-		emit_signal("die")
+		body.die()
 		
 func _on_Area2D4_body_entered(body):
 	if body.name == "Player":
-		emit_signal("die")	
+		body.die()
 
 func die():
-	get_node("Area2D2").queue_free()
-	get_node("Area2D3").queue_free()
-	get_node("Area2D4").queue_free()
 	$DeathMusic.play()
 	var pickup = load("res://Scenes/Pickups/Pickup.tscn")
 	var scene_instance = pickup.instance()
+#	get_node("CollisionShape2D").queue_free()
 	$"AnimationPlayer".play("kill_windows")
-	get_node("CollisionShape2D").queue_free()
 	yield(get_tree().create_timer(0.2), "timeout")
-	get_parent().add_child(scene_instance)
+	if Variables.current_scene == 1:
+		get_parent().add_child(scene_instance)
 	queue_free()
 
 func _on_Area2D_body_entered(body):

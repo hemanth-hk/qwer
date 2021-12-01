@@ -19,6 +19,7 @@ func spawn():
 #	windows_defender_instance.direction = ($WindowsPosition1.global_position-global_position).normalized()
 	request_instance.global_position = arr2[0].global_position
 	request_instance.rotation_degrees = self.rotation_degrees
+	request_instance.scale = 2*request_instance.scale
 	var arr3 = [0,1,2,3,4]
 	arr3.shuffle()
 	
