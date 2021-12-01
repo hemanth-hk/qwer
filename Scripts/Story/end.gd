@@ -8,7 +8,8 @@ extends MarginContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	yield(get_tree().create_timer(1), "timeout")
+	$"sus".play()
 #	var new_dialog = Dialogic.start('gunguy')
 #	add_child(new_dialog)
 

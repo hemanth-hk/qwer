@@ -105,7 +105,7 @@ margin_top = 226.737
 margin_right = 404.183
 margin_bottom = 285.737
 custom_fonts/font = SubResource( 5 )
-text = "Use W A S D or
+text = "Use W S A D or
 Arrow Keys to move"
 align = 1
 valign = 1

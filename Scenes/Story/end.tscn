@@ -1,7 +1,16 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Media/Fonts/mine.tres" type="DynamicFont" id=1]
 [ext_resource path="res://Scripts/Story/end.gd" type="Script" id=2]
+[ext_resource path="res://Music/Miscellanous/Optisus.wav" type="AudioStream" id=3]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://Media/Fonts/Minecraft.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 50
+outline_size = 1
+outline_color = Color( 0.133333, 0.941176, 0.411765, 1 )
+font_data = SubResource( 1 )
 
 [node name="MarginContainer" type="MarginContainer"]
 anchor_right = 1.0
@@ -21,9 +30,18 @@ margin_right = 1024.0
 margin_bottom = 600.0
 
 [node name="thanks" type="Label" parent="CenterContainer"]
-margin_left = 437.0
-margin_top = 278.0
-margin_right = 587.0
-margin_bottom = 321.0
-custom_fonts/font = ExtResource( 1 )
-text = "Thanks"
+margin_left = 237.0
+margin_top = 166.0
+margin_right = 786.0
+margin_bottom = 433.0
+custom_fonts/font = SubResource( 2 )
+text = "Stackoverflow is down
+
+
+
+Thanks for playing"
+align = 1
+valign = 1
+
+[node name="sus" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )

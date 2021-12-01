@@ -53,9 +53,14 @@ onready var cuscur = load("res://Media/Cursor.png")
 func _physics_process(_delta):
 	if not Variables.powers[1]:
 		$"Node2D".visible = false
+	else:
+		$"Node2D".visible = true
 		
 	if not Variables.powers[2]:
 		$"Area2D".visible = false
+	else:
+		$"Area2D".visible = true
+		
 	if not dead and not Variables.dialog_started:
 		if Variables.powers[2] == true:
 			$"Sprite/AnimatedSprite".play("reflect")
@@ -150,7 +155,7 @@ func die():
 	if Variables.current_scene == 5:
 		print(get_tree().get_root().get_children())
 		for x in get_tree().get_root().get_children():
-			if "Bullet" in x.name or "Windows" in x.name or "Request" in x.name:
+			if "Bullet" in x.name or "Windows" in x.name or "Request" in x.name or "Path" in x.name:
 				x.queue_free()
 		Variables.powers = [true,true,true]
 		get_tree().change_scene("res://Scenes/Levels/stackoverflow.tscn")

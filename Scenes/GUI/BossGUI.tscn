@@ -164,11 +164,33 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="RichTextLabel2" type="RichTextLabel" parent="MainContainer"]
+margin_left = 295.0
+margin_top = 740.0
+margin_right = 1344.0
+margin_bottom = 789.0
+custom_fonts/normal_font = SubResource( 1 )
+text = "StackOverflow Health"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="p" type="RichTextLabel" parent="MainContainer"]
+margin_left = 455.047
+margin_top = 17.3784
+margin_right = 950.047
+margin_bottom = 66.3784
+custom_fonts/normal_font = SubResource( 1 )
+text = "Power Rotation in : "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ProgressBar" type="ProgressBar" parent="."]
-margin_left = 193.862
-margin_top = 79.1571
-margin_right = 1132.86
-margin_bottom = 104.157
+margin_left = 294.945
+margin_top = 793.871
+margin_right = 1233.94
+margin_bottom = 818.87
 custom_styles/fg = SubResource( 2 )
 custom_styles/bg = SubResource( 3 )
 value = 100.0

@@ -5,8 +5,8 @@ var request = preload("res://Scenes/Enemies/Request.tscn")
 
 func spawn():
 	
-	var arr1 = [get_children()[5], get_children()[6], get_children()[7], get_children()[8], get_children()[9]]
-	var arr2 = [get_children()[10], get_children()[11], get_children()[12], get_children()[13], get_children()[14]]
+	var arr1 = [get_children()[5], get_children()[6], get_children()[7]]
+	var arr2 = [get_children()[8], get_children()[9], get_children()[10], get_children()[11], get_children()[12]]
 	randomize()
 	var rand_value_1 = arr1[randi() % arr1.size()]
 	var rand_value_2 = arr2[randi() % arr2.size()]
@@ -20,7 +20,7 @@ func spawn():
 	request_instance.global_position = rand_value_2.global_position
 	request_instance.rotation_degrees = self.rotation_degrees
 	request_instance.scale = 2*request_instance.scale
-	var arr3 = [0,1,2,3,4]
+	var arr3 = [0,1,1,2,3]
 	var rand_value_3 = arr3[randi() % arr3.size()]
 	
 	if rand_value_3 == Variables.enemy_spawn[0]  or rand_value_3 == Variables.enemy_spawn[1]:
@@ -34,7 +34,8 @@ func spawn():
 	
 
 func _ready():
-	$Timer.start(1)
+	if not Variables.dialog_started:
+		$Timer.start(1)
 	
 func _on_Timer_timeout():
 	var val = get_node("../bg/ProgressBar/ProgressBar2").value
@@ -53,7 +54,15 @@ func _on_Timer_timeout():
 	if not Variables.dialog_started:
 		spawn()
 #	get_node("../bg/ProgressBar").decrease_value(2)
-	$Timer.start(6)
+	
+	if not Variables.dialog_started:
+		$Timer.start(4)
+	
+func _process(delta):
+	if Variables.powers != [true, true, true]:
+		$"../bg/MainContainer/p".text = "Power Rotation in : " + str(ceil($Timer.time_left))
+	else:
+		$"../bg/MainContainer/p".text = ""
 
 func _on_Area2D_body_entered(body):
 	if body.name == "Player":
@@ -68,4 +77,12 @@ func _on_Area2D_area_entered(area):
 		area.queue_free()
 	var val = get_node("../bg/ProgressBar/ProgressBar2").value
 	if val<=0:
-		get_tree().change_scene("res://Scenes/Story/end.tscn")	
+		Variables.dialog_started = true
+		var new_dialog = Dialogic.start('om')
+		add_child(new_dialog)
+		new_dialog.connect("timeline_end", self, "dededede")
+		
+
+func dededede(name):
+	get_tree().change_scene("res://Scenes/Story/end.tscn")
+	Variables.dialog_started = false
