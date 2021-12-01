@@ -140,14 +140,19 @@ func die():
 	yield(get_tree().create_timer(0.2), "timeout")
 	get_node("DeathParticles").emitting = true
 	yield(get_tree().create_timer(1), "timeout")
-	if Variables.current_scene == 1:
-		get_tree().change_scene("res://Scenes/Levels/defender.tscn")
-	if Variables.current_scene == 2 or Variables.current_scene == 4:
-		get_tree().change_scene("res://Scenes/Levels/github.tscn")
-	if Variables.current_scene == 3:
-		get_tree().change_scene("res://Scenes/Levels/reddit.tscn")
+#	if Variables.current_scene == 1:
+#		get_tree().change_scene("res://Scenes/Levels/defender.tscn")
+#	if Variables.current_scene == 2 or Variables.current_scene == 4:
+#		get_tree().change_scene("res://Scenes/Levels/github.tscn")
+#	if Variables.current_scene == 3:
+#		get_tree().change_scene("res://Scenes/Levels/reddit.tscn")
 	if Variables.current_scene == 5:
-		get_tree().change_scene("res://Scenes/Levels/stackoverflow.tscn")
+		for x in get_children():
+			if "Bullet" in x.name or "Windows" in x.name or "Request" in x.name:
+				x.queue_free()
+		Variables.powers = [true,true,true]
+#		get_tree().change_scene("res://Scenes/Levels/stackoverflow.tscn")
+	get_tree().reload_current_scene()  
 #	$"Sprite/AnimatedSprite".play("default")
 
 func _on_WindowsDefender_die():

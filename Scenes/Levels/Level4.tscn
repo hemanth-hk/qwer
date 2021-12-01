@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Scenes/Hazards/Wall.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Levels/Level4.gd" type="Script" id=2]
@@ -14,6 +14,9 @@
 [ext_resource path="res://Media/Platforms_Hazards/Hazards.png" type="Texture" id=12]
 [ext_resource path="res://Media/Tilesets/Pipes/Pipes.png" type="Texture" id=13]
 [ext_resource path="res://Music/Level_Music/Level2and4.wav" type="AudioStream" id=14]
+[ext_resource path="res://Media/Backgrounds/Level2and4/Fork.png" type="Texture" id=15]
+[ext_resource path="res://Media/Backgrounds/Level2and4/PR.png" type="Texture" id=16]
+[ext_resource path="res://Media/Backgrounds/Level2and4/Github.png" type="Texture" id=17]
 
 [sub_resource type="TileSet" id=1]
 0/name = "Pipes.png 0"
@@ -345,6 +348,43 @@ tile_data = PoolIntArray( -3145764, -1610612733, 0, -3080228, 0, 65536, -3014692
 [node name="Player" parent="." instance=ExtResource( 8 )]
 position = Vector2( 94.2159, -633.139 )
 scale = Vector2( 0.6, 0.6 )
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Node"]
+modulate = Color( 1, 1, 1, 0.145098 )
+show_behind_parent = true
+position = Vector2( -455.022, -1316.81 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 17 )
+
+[node name="Sprite2" type="Sprite" parent="Node"]
+modulate = Color( 1, 1, 1, 0.243137 )
+show_behind_parent = true
+position = Vector2( -1056.73, -1099.69 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 16 )
+
+[node name="Sprite3" type="Sprite" parent="Node"]
+modulate = Color( 1, 1, 1, 0.243137 )
+show_behind_parent = true
+position = Vector2( 154.854, -1457.15 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 16 )
+
+[node name="Sprite4" type="Sprite" parent="Node"]
+modulate = Color( 1, 1, 1, 0.243137 )
+show_behind_parent = true
+position = Vector2( -751.331, -1485.79 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 15 )
+
+[node name="Sprite5" type="Sprite" parent="Node"]
+modulate = Color( 1, 1, 1, 0.243137 )
+show_behind_parent = true
+position = Vector2( 27.7682, -1175.29 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 15 )
 
 [node name="Gears" type="Node" parent="."]
 
