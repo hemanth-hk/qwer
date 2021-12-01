@@ -418,6 +418,7 @@ position = Vector2( -960.909, -1035.22 )
 scale = Vector2( 3, 3 )
 
 [node name="Path2D" parent="." instance=ExtResource( 8 )]
+position = Vector2( 0.749146, 0 )
 
 [node name="Teleporter12" parent="." instance=ExtResource( 9 )]
 position = Vector2( -303.208, -794.377 )
