@@ -35,4 +35,4 @@ func _process(delta):
 			Variables.optisus.stop()
 			get_tree().change_scene("res://Scenes/Levels/defender.tscn")
 		elif current_idx == 1:
-			get_tree().change_scene("res://Scenes/GUI/Rules.tscn")
+			get_tree().change_scene("res://Scenes/gui/Rules.tscn")

@@ -94,7 +94,7 @@ func _process(delta):
 
 	if Input.is_action_just_pressed("ui_accept"):
 		if current_idx  == 7:
-			get_tree().change_scene("res://Scenes/GUI/title.tscn")
+			get_tree().change_scene("res://Scenes/gui/title.tscn")
 
 
 

@@ -10,4 +10,4 @@ extends Control
 func _ready():
 	Variables.optisus.play()
 	yield(get_tree().create_timer(3), "timeout")
-	get_tree().change_scene("res://Scenes/GUI/title.tscn")
+	get_tree().change_scene("res://Scenes/gui/title.tscn")
